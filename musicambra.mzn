@@ -46,9 +46,11 @@ constraint forall(i in 1..nPrecs) (
 
 solve minimize max([s[i]+d[i]| i in 1..nPeces])*pressupost + preu;
 
+var int: max_value = max([s[i]*5+d[i]*5 | i in 1..nPeces]);
+
 output[
-  "Hora d’inici del festival: 10h 0min \nHora d'acabada del festival: " ++ show(10 + max([s[i]*5+d[i]*5 | i in         1..nPeces]) div 60)++ "h " ++
-  show(max([s[i]*5+d[i]*5 | i in 1..nPeces]) mod 60) ++ 
+  "Hora d’inici del festival: 10h 0min \nHora d'acabada del festival: " ++ show(10 + max_value div 60)++ "h " ++
+  show(max_value mod 60) ++ 
   "min \nCost de contractació: " ++ show(fix(preu)) ++ "\n"
 ] ++ [
   "Peça " ++ show(p) ++ ":\n" ++ 
