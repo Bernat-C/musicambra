@@ -24,14 +24,31 @@ var 0..pressupost: preu = sum([d[i]*salari[j]| j in 1..nMusics, i in 1..nPeces w
 %array[1..nInstruments] of int: poolInstruments = [sum(j in 1..nMusics)(saptocar[j,i])| i in 1..nInstruments]; % Number of each instrument we have.
 array[1..nPeces,1..nMusics] of var 0..nInstruments: musicsAssignats;
 
-% Que un music toqui un instrument que li toca.
-constraint forall(i in 1..nPeces, j in 1..nMusics)(
-    if musicsAssignats[i,j]!=0 then saptocar[j,musicsAssignats[i,j]] endif
+
+
+% Constraint que assegura que es respecta la prioritat
+constraint forall(i in 1..nPrecs) (
+  s[succ[i]] >= s[pred[i]]+d[pred[i]]
 );
+
+
+/*constraint forall(i in 1..nPrecs, j in 1..nPrecs) (
+  if succ[i] == pred[j] then
+    s[succ[j]] >= s[pred[i]] + d[pred[i]]
+  endif
+);*/
+
+% La primera cançó ha de començar al principi del festival
+%constraint min([s[i] | i in 1..nPeces]) = 0;
 
 % Que cada peça tingui els instruments que necessita durant l'execució
 constraint forall(i in 1..nPeces, j in 1..nInstruments)(
     count([musicsAssignats[i,k]|k in 1..nMusics], j) == requereix[i,j]
+);
+
+% Que un music toqui un instrument que li toca.
+constraint forall(i in 1..nPeces, j in 1..nMusics)(
+    if musicsAssignats[i,j]!=0 then saptocar[j,musicsAssignats[i,j]] endif
 );
 
 % Constraint que assegura que un músic no pugui de tocar dos peces simultàniament
@@ -39,12 +56,8 @@ constraint forall(i in 1..nPeces, m in 1..nMusics, j in 1..nPeces)( % Per tots e
       if s[i] <= s[j] /\ s[i] + d[i] > s[j] /\ i!=j then musicsAssignats[i,m]*musicsAssignats[j,m]=0 endif
 );
 
-% Constraint que assegura que es respecta la prioritat
-constraint forall(i in 1..nPrecs) (
-  s[succ[i]] >= s[pred[i]]+d[pred[i]]
-);
-
-solve minimize max([s[i]+d[i]| i in 1..nPeces])*pressupost + preu;
+%solve minimize max([s[i]+d[i]| i in 1..nPeces])*pressupost + preu;
+solve minimize max([s[i]+d[i]| i in 1..nPeces]);
 
 var int: max_value = max([s[i]*5+d[i]*5 | i in 1..nPeces]);
 
