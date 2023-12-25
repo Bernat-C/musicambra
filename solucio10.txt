@@ -1,0 +1,2303 @@
+%%%mzn-stat: boolVariables=19430
+%%%mzn-stat: failures=9
+%%%mzn-stat: objective=133
+%%%mzn-stat: objectiveBound=50
+%%%mzn-stat: propagations=3672519
+%%%mzn-stat: solveTime=18.5778
+%%%mzn-stat-end
+Hora d’inici del festival: 10h 0min 
+Hora d'acabada del festival: 21h 5min 
+Cost de contractació: 1876
+Peça 1:
+  Inici: 10h 0 min
+  Final: 10h 30 min
+  Music 18 toca instrument 4
+  Music 19 toca instrument 3
+  Music 20 toca instrument 3
+  Music 21 toca instrument 1
+  Music 22 toca instrument 4
+  Music 23 toca instrument 4
+  Music 24 toca instrument 1
+  Music 25 toca instrument 3
+Peça 2:
+  Inici: 10h 30 min
+  Final: 11h 10 min
+  Music 23 toca instrument 3
+  Music 24 toca instrument 1
+  Music 25 toca instrument 2
+Peça 3:
+  Inici: 11h 10 min
+  Final: 11h 35 min
+  Music 21 toca instrument 1
+  Music 22 toca instrument 4
+  Music 23 toca instrument 3
+  Music 24 toca instrument 1
+  Music 25 toca instrument 3
+Peça 4:
+  Inici: 11h 35 min
+  Final: 12h 15 min
+  Music 22 toca instrument 4
+  Music 23 toca instrument 3
+  Music 24 toca instrument 1
+  Music 25 toca instrument 3
+Peça 5:
+  Inici: 12h 15 min
+  Final: 12h 25 min
+  Music 21 toca instrument 1
+  Music 22 toca instrument 1
+  Music 23 toca instrument 3
+  Music 24 toca instrument 1
+  Music 25 toca instrument 2
+Peça 6:
+  Inici: 12h 25 min
+  Final: 12h 55 min
+  Music 15 toca instrument 3
+  Music 16 toca instrument 2
+  Music 18 toca instrument 3
+  Music 19 toca instrument 3
+  Music 20 toca instrument 2
+  Music 22 toca instrument 4
+  Music 23 toca instrument 4
+  Music 25 toca instrument 2
+Peça 7:
+  Inici: 12h 55 min
+  Final: 13h 25 min
+  Music 16 toca instrument 2
+  Music 18 toca instrument 3
+  Music 19 toca instrument 3
+  Music 20 toca instrument 2
+  Music 22 toca instrument 1
+  Music 23 toca instrument 3
+  Music 24 toca instrument 1
+  Music 25 toca instrument 2
+Peça 8:
+  Inici: 13h 25 min
+  Final: 13h 35 min
+  Music 16 toca instrument 2
+  Music 18 toca instrument 4
+  Music 19 toca instrument 3
+  Music 20 toca instrument 2
+  Music 22 toca instrument 4
+  Music 23 toca instrument 4
+  Music 25 toca instrument 2
+Peça 9:
+  Inici: 13h 35 min
+  Final: 14h 25 min
+  Music 16 toca instrument 2
+  Music 20 toca instrument 2
+  Music 21 toca instrument 1
+  Music 22 toca instrument 1
+  Music 23 toca instrument 4
+  Music 24 toca instrument 1
+  Music 25 toca instrument 2
+Peça 10:
+  Inici: 14h 25 min
+  Final: 15h 15 min
+  Music 16 toca instrument 2
+  Music 17 toca instrument 1
+  Music 18 toca instrument 4
+  Music 20 toca instrument 2
+  Music 21 toca instrument 1
+  Music 22 toca instrument 4
+  Music 23 toca instrument 4
+  Music 24 toca instrument 1
+  Music 25 toca instrument 2
+Peça 11:
+  Inici: 15h 15 min
+  Final: 15h 40 min
+  Music 20 toca instrument 2
+  Music 22 toca instrument 1
+  Music 23 toca instrument 3
+  Music 24 toca instrument 1
+  Music 25 toca instrument 2
+Peça 12:
+  Inici: 15h 40 min
+  Final: 16h 20 min
+  Music 21 toca instrument 1
+  Music 22 toca instrument 4
+  Music 23 toca instrument 4
+  Music 24 toca instrument 1
+  Music 25 toca instrument 2
+Peça 13:
+  Inici: 16h 20 min
+  Final: 17h 5 min
+  Music 18 toca instrument 4
+  Music 20 toca instrument 3
+  Music 21 toca instrument 1
+  Music 22 toca instrument 4
+  Music 23 toca instrument 4
+  Music 24 toca instrument 1
+  Music 25 toca instrument 3
+Peça 14:
+  Inici: 17h 5 min
+  Final: 17h 55 min
+  Music 20 toca instrument 2
+  Music 23 toca instrument 4
+  Music 24 toca instrument 1
+  Music 25 toca instrument 2
+Peça 15:
+  Inici: 17h 55 min
+  Final: 18h 40 min
+  Music 20 toca instrument 2
+  Music 22 toca instrument 1
+  Music 23 toca instrument 3
+  Music 24 toca instrument 1
+  Music 25 toca instrument 3
+Peça 16:
+  Inici: 18h 40 min
+  Final: 19h 5 min
+  Music 18 toca instrument 4
+  Music 20 toca instrument 2
+  Music 21 toca instrument 1
+  Music 22 toca instrument 4
+  Music 23 toca instrument 4
+  Music 24 toca instrument 1
+  Music 25 toca instrument 2
+Peça 17:
+  Inici: 19h 5 min
+  Final: 19h 50 min
+  Music 16 toca instrument 2
+  Music 20 toca instrument 2
+  Music 21 toca instrument 1
+  Music 22 toca instrument 1
+  Music 23 toca instrument 3
+  Music 24 toca instrument 1
+  Music 25 toca instrument 2
+Peça 18:
+  Inici: 19h 50 min
+  Final: 19h 55 min
+  Music 16 toca instrument 2
+  Music 18 toca instrument 3
+  Music 19 toca instrument 3
+  Music 20 toca instrument 2
+  Music 22 toca instrument 4
+  Music 23 toca instrument 4
+  Music 25 toca instrument 3
+Peça 19:
+  Inici: 19h 55 min
+  Final: 20h 15 min
+  Music 16 toca instrument 2
+  Music 19 toca instrument 3
+  Music 20 toca instrument 2
+  Music 23 toca instrument 3
+  Music 24 toca instrument 1
+  Music 25 toca instrument 2
+Peça 20:
+  Inici: 20h 15 min
+  Final: 21h 5 min
+  Music 23 toca instrument 4
+  Music 24 toca instrument 1
+  Music 25 toca instrument 3
+----------
+%%%mzn-stat: boolVariables=20223
+%%%mzn-stat: failures=2211127
+%%%mzn-stat: objective=129
+%%%mzn-stat: objectiveBound=50
+%%%mzn-stat: propagations=808544716
+%%%mzn-stat: solveTime=1633.3
+%%%mzn-stat-end
+Hora d’inici del festival: 10h 0min 
+Hora d'acabada del festival: 20h 45min 
+Cost de contractació: 1856
+Peça 1:
+  Inici: 12h 35 min
+  Final: 13h 5 min
+  Music 18 toca instrument 4
+  Music 19 toca instrument 3
+  Music 20 toca instrument 3
+  Music 21 toca instrument 1
+  Music 22 toca instrument 4
+  Music 23 toca instrument 4
+  Music 24 toca instrument 1
+  Music 25 toca instrument 3
+Peça 2:
+  Inici: 16h 0 min
+  Final: 16h 40 min
+  Music 23 toca instrument 3
+  Music 24 toca instrument 1
+  Music 25 toca instrument 2
+Peça 3:
+  Inici: 10h 0 min
+  Final: 10h 25 min
+  Music 21 toca instrument 1
+  Music 22 toca instrument 4
+  Music 23 toca instrument 3
+  Music 24 toca instrument 1
+  Music 25 toca instrument 3
+Peça 4:
+  Inici: 10h 25 min
+  Final: 11h 5 min
+  Music 22 toca instrument 4
+  Music 23 toca instrument 3
+  Music 24 toca instrument 1
+  Music 25 toca instrument 3
+Peça 5:
+  Inici: 17h 5 min
+  Final: 17h 15 min
+  Music 21 toca instrument 1
+  Music 22 toca instrument 1
+  Music 23 toca instrument 3
+  Music 24 toca instrument 1
+  Music 25 toca instrument 2
+Peça 6:
+  Inici: 13h 55 min
+  Final: 14h 25 min
+  Music 15 toca instrument 3
+  Music 16 toca instrument 2
+  Music 18 toca instrument 3
+  Music 19 toca instrument 3
+  Music 20 toca instrument 2
+  Music 22 toca instrument 4
+  Music 23 toca instrument 4
+  Music 25 toca instrument 2
+Peça 7:
+  Inici: 12h 5 min
+  Final: 12h 35 min
+  Music 16 toca instrument 2
+  Music 18 toca instrument 3
+  Music 19 toca instrument 3
+  Music 20 toca instrument 2
+  Music 22 toca instrument 1
+  Music 23 toca instrument 3
+  Music 24 toca instrument 1
+  Music 25 toca instrument 2
+Peça 8:
+  Inici: 11h 5 min
+  Final: 11h 15 min
+  Music 16 toca instrument 2
+  Music 18 toca instrument 4
+  Music 19 toca instrument 3
+  Music 20 toca instrument 2
+  Music 22 toca instrument 4
+  Music 23 toca instrument 4
+  Music 25 toca instrument 2
+Peça 9:
+  Inici: 13h 5 min
+  Final: 13h 55 min
+  Music 16 toca instrument 2
+  Music 20 toca instrument 2
+  Music 21 toca instrument 1
+  Music 22 toca instrument 1
+  Music 23 toca instrument 4
+  Music 24 toca instrument 1
+  Music 25 toca instrument 2
+Peça 10:
+  Inici: 14h 25 min
+  Final: 15h 15 min
+  Music 16 toca instrument 2
+  Music 17 toca instrument 1
+  Music 18 toca instrument 4
+  Music 20 toca instrument 2
+  Music 21 toca instrument 1
+  Music 22 toca instrument 4
+  Music 23 toca instrument 4
+  Music 24 toca instrument 1
+  Music 25 toca instrument 2
+Peça 11:
+  Inici: 16h 40 min
+  Final: 17h 5 min
+  Music 20 toca instrument 2
+  Music 22 toca instrument 1
+  Music 23 toca instrument 3
+  Music 24 toca instrument 1
+  Music 25 toca instrument 2
+Peça 12:
+  Inici: 18h 0 min
+  Final: 18h 40 min
+  Music 21 toca instrument 1
+  Music 22 toca instrument 4
+  Music 23 toca instrument 4
+  Music 24 toca instrument 1
+  Music 25 toca instrument 2
+Peça 13:
+  Inici: 15h 15 min
+  Final: 16h 0 min
+  Music 18 toca instrument 4
+  Music 20 toca instrument 3
+  Music 21 toca instrument 1
+  Music 22 toca instrument 4
+  Music 23 toca instrument 4
+  Music 24 toca instrument 1
+  Music 25 toca instrument 3
+Peça 14:
+  Inici: 11h 15 min
+  Final: 12h 5 min
+  Music 20 toca instrument 2
+  Music 23 toca instrument 4
+  Music 24 toca instrument 1
+  Music 25 toca instrument 2
+Peça 15:
+  Inici: 17h 15 min
+  Final: 18h 0 min
+  Music 20 toca instrument 2
+  Music 22 toca instrument 1
+  Music 23 toca instrument 3
+  Music 24 toca instrument 1
+  Music 25 toca instrument 3
+Peça 16:
+  Inici: 18h 40 min
+  Final: 19h 5 min
+  Music 18 toca instrument 4
+  Music 20 toca instrument 2
+  Music 21 toca instrument 1
+  Music 22 toca instrument 4
+  Music 23 toca instrument 4
+  Music 24 toca instrument 1
+  Music 25 toca instrument 2
+Peça 17:
+  Inici: 19h 5 min
+  Final: 19h 50 min
+  Music 16 toca instrument 2
+  Music 20 toca instrument 2
+  Music 21 toca instrument 1
+  Music 22 toca instrument 1
+  Music 23 toca instrument 3
+  Music 24 toca instrument 1
+  Music 25 toca instrument 2
+Peça 18:
+  Inici: 19h 50 min
+  Final: 19h 55 min
+  Music 16 toca instrument 2
+  Music 18 toca instrument 3
+  Music 19 toca instrument 3
+  Music 20 toca instrument 2
+  Music 22 toca instrument 4
+  Music 23 toca instrument 4
+  Music 25 toca instrument 3
+Peça 19:
+  Inici: 19h 55 min
+  Final: 20h 15 min
+  Music 16 toca instrument 2
+  Music 19 toca instrument 3
+  Music 20 toca instrument 2
+  Music 23 toca instrument 3
+  Music 24 toca instrument 1
+  Music 25 toca instrument 2
+Peça 20:
+  Inici: 19h 55 min
+  Final: 20h 45 min
+  Music 18 toca instrument 3
+  Music 21 toca instrument 1
+  Music 22 toca instrument 4
+----------
+%%%mzn-stat: boolVariables=20271
+%%%mzn-stat: failures=2212095
+%%%mzn-stat: objective=73
+%%%mzn-stat: objectiveBound=50
+%%%mzn-stat: propagations=810173167
+%%%mzn-stat: solveTime=1681.34
+%%%mzn-stat-end
+Hora d’inici del festival: 10h 0min 
+Hora d'acabada del festival: 16h 5min 
+Cost de contractació: 1881
+Peça 1:
+  Inici: 10h 40 min
+  Final: 11h 10 min
+  Music 18 toca instrument 4
+  Music 19 toca instrument 3
+  Music 20 toca instrument 3
+  Music 21 toca instrument 1
+  Music 22 toca instrument 4
+  Music 23 toca instrument 4
+  Music 24 toca instrument 1
+  Music 25 toca instrument 3
+Peça 2:
+  Inici: 10h 0 min
+  Final: 10h 40 min
+  Music 23 toca instrument 3
+  Music 24 toca instrument 1
+  Music 25 toca instrument 2
+Peça 3:
+  Inici: 10h 0 min
+  Final: 10h 25 min
+  Music 18 toca instrument 4
+  Music 19 toca instrument 3
+  Music 20 toca instrument 3
+  Music 21 toca instrument 1
+  Music 22 toca instrument 1
+Peça 4:
+  Inici: 10h 25 min
+  Final: 11h 5 min
+  Music 14 toca instrument 3
+  Music 15 toca instrument 3
+  Music 16 toca instrument 4
+  Music 17 toca instrument 1
+Peça 5:
+  Inici: 12h 5 min
+  Final: 12h 15 min
+  Music 21 toca instrument 1
+  Music 22 toca instrument 1
+  Music 23 toca instrument 3
+  Music 24 toca instrument 1
+  Music 25 toca instrument 2
+Peça 6:
+  Inici: 11h 35 min
+  Final: 12h 5 min
+  Music 11 toca instrument 2
+  Music 15 toca instrument 3
+  Music 16 toca instrument 2
+  Music 18 toca instrument 3
+  Music 19 toca instrument 3
+  Music 22 toca instrument 4
+  Music 23 toca instrument 4
+  Music 25 toca instrument 2
+Peça 7:
+  Inici: 11h 5 min
+  Final: 11h 35 min
+  Music 7 toca instrument 3
+  Music 10 toca instrument 2
+  Music 11 toca instrument 2
+  Music 13 toca instrument 3
+  Music 14 toca instrument 1
+  Music 15 toca instrument 3
+  Music 16 toca instrument 2
+  Music 17 toca instrument 1
+Peça 8:
+  Inici: 11h 5 min
+  Final: 11h 15 min
+  Music 1 toca instrument 4
+  Music 2 toca instrument 3
+  Music 3 toca instrument 2
+  Music 5 toca instrument 2
+  Music 8 toca instrument 2
+  Music 9 toca instrument 4
+  Music 12 toca instrument 4
+Peça 9:
+  Inici: 11h 15 min
+  Final: 12h 5 min
+  Music 6 toca instrument 1
+  Music 8 toca instrument 2
+  Music 9 toca instrument 2
+  Music 12 toca instrument 4
+  Music 20 toca instrument 2
+  Music 21 toca instrument 1
+  Music 24 toca instrument 1
+Peça 10:
+  Inici: 12h 5 min
+  Final: 12h 55 min
+  Music 10 toca instrument 2
+  Music 11 toca instrument 1
+  Music 12 toca instrument 4
+  Music 14 toca instrument 1
+  Music 15 toca instrument 4
+  Music 16 toca instrument 2
+  Music 17 toca instrument 1
+  Music 18 toca instrument 4
+  Music 20 toca instrument 2
+Peça 11:
+  Inici: 12h 5 min
+  Final: 12h 30 min
+  Music 5 toca instrument 1
+  Music 6 toca instrument 1
+  Music 8 toca instrument 2
+  Music 9 toca instrument 2
+  Music 19 toca instrument 3
+Peça 12:
+  Inici: 12h 15 min
+  Final: 12h 55 min
+  Music 21 toca instrument 1
+  Music 22 toca instrument 4
+  Music 23 toca instrument 4
+  Music 24 toca instrument 1
+  Music 25 toca instrument 2
+Peça 13:
+  Inici: 12h 55 min
+  Final: 13h 40 min
+  Music 18 toca instrument 4
+  Music 20 toca instrument 3
+  Music 21 toca instrument 1
+  Music 22 toca instrument 4
+  Music 23 toca instrument 4
+  Music 24 toca instrument 1
+  Music 25 toca instrument 3
+Peça 14:
+  Inici: 11h 15 min
+  Final: 12h 5 min
+  Music 2 toca instrument 4
+  Music 3 toca instrument 2
+  Music 4 toca instrument 1
+  Music 5 toca instrument 2
+Peça 15:
+  Inici: 12h 30 min
+  Final: 13h 15 min
+  Music 6 toca instrument 1
+  Music 8 toca instrument 2
+  Music 9 toca instrument 1
+  Music 13 toca instrument 3
+  Music 19 toca instrument 3
+Peça 16:
+  Inici: 13h 40 min
+  Final: 14h 5 min
+  Music 18 toca instrument 4
+  Music 20 toca instrument 2
+  Music 21 toca instrument 1
+  Music 22 toca instrument 4
+  Music 23 toca instrument 4
+  Music 24 toca instrument 1
+  Music 25 toca instrument 2
+Peça 17:
+  Inici: 14h 5 min
+  Final: 14h 50 min
+  Music 16 toca instrument 2
+  Music 20 toca instrument 2
+  Music 21 toca instrument 1
+  Music 22 toca instrument 1
+  Music 23 toca instrument 3
+  Music 24 toca instrument 1
+  Music 25 toca instrument 2
+Peça 18:
+  Inici: 14h 50 min
+  Final: 14h 55 min
+  Music 16 toca instrument 2
+  Music 18 toca instrument 3
+  Music 19 toca instrument 3
+  Music 20 toca instrument 2
+  Music 22 toca instrument 4
+  Music 23 toca instrument 4
+  Music 25 toca instrument 3
+Peça 19:
+  Inici: 14h 55 min
+  Final: 15h 15 min
+  Music 16 toca instrument 2
+  Music 19 toca instrument 3
+  Music 20 toca instrument 2
+  Music 23 toca instrument 3
+  Music 24 toca instrument 1
+  Music 25 toca instrument 2
+Peça 20:
+  Inici: 15h 15 min
+  Final: 16h 5 min
+  Music 23 toca instrument 4
+  Music 24 toca instrument 1
+  Music 25 toca instrument 3
+----------
+%%%mzn-stat: boolVariables=20295
+%%%mzn-stat: failures=2212256
+%%%mzn-stat: objective=69
+%%%mzn-stat: objectiveBound=50
+%%%mzn-stat: propagations=810235657
+%%%mzn-stat: solveTime=1690.83
+%%%mzn-stat-end
+Hora d’inici del festival: 10h 0min 
+Hora d'acabada del festival: 15h 45min 
+Cost de contractació: 1861
+Peça 1:
+  Inici: 10h 40 min
+  Final: 11h 10 min
+  Music 18 toca instrument 4
+  Music 19 toca instrument 3
+  Music 20 toca instrument 3
+  Music 21 toca instrument 1
+  Music 22 toca instrument 4
+  Music 23 toca instrument 4
+  Music 24 toca instrument 1
+  Music 25 toca instrument 3
+Peça 2:
+  Inici: 10h 0 min
+  Final: 10h 40 min
+  Music 23 toca instrument 3
+  Music 24 toca instrument 1
+  Music 25 toca instrument 2
+Peça 3:
+  Inici: 10h 0 min
+  Final: 10h 25 min
+  Music 18 toca instrument 4
+  Music 19 toca instrument 3
+  Music 20 toca instrument 3
+  Music 21 toca instrument 1
+  Music 22 toca instrument 1
+Peça 4:
+  Inici: 10h 25 min
+  Final: 11h 5 min
+  Music 14 toca instrument 3
+  Music 15 toca instrument 3
+  Music 16 toca instrument 4
+  Music 17 toca instrument 1
+Peça 5:
+  Inici: 12h 5 min
+  Final: 12h 15 min
+  Music 21 toca instrument 1
+  Music 22 toca instrument 1
+  Music 23 toca instrument 3
+  Music 24 toca instrument 1
+  Music 25 toca instrument 2
+Peça 6:
+  Inici: 11h 35 min
+  Final: 12h 5 min
+  Music 11 toca instrument 2
+  Music 15 toca instrument 3
+  Music 16 toca instrument 2
+  Music 18 toca instrument 3
+  Music 19 toca instrument 3
+  Music 22 toca instrument 4
+  Music 23 toca instrument 4
+  Music 25 toca instrument 2
+Peça 7:
+  Inici: 11h 5 min
+  Final: 11h 35 min
+  Music 7 toca instrument 3
+  Music 10 toca instrument 2
+  Music 11 toca instrument 2
+  Music 13 toca instrument 3
+  Music 14 toca instrument 1
+  Music 15 toca instrument 3
+  Music 16 toca instrument 2
+  Music 17 toca instrument 1
+Peça 8:
+  Inici: 11h 5 min
+  Final: 11h 15 min
+  Music 1 toca instrument 4
+  Music 2 toca instrument 3
+  Music 3 toca instrument 2
+  Music 5 toca instrument 2
+  Music 8 toca instrument 2
+  Music 9 toca instrument 4
+  Music 12 toca instrument 4
+Peça 9:
+  Inici: 11h 15 min
+  Final: 12h 5 min
+  Music 6 toca instrument 1
+  Music 8 toca instrument 2
+  Music 9 toca instrument 2
+  Music 12 toca instrument 4
+  Music 20 toca instrument 2
+  Music 21 toca instrument 1
+  Music 24 toca instrument 1
+Peça 10:
+  Inici: 12h 5 min
+  Final: 12h 55 min
+  Music 10 toca instrument 2
+  Music 11 toca instrument 1
+  Music 12 toca instrument 4
+  Music 14 toca instrument 1
+  Music 15 toca instrument 4
+  Music 16 toca instrument 2
+  Music 17 toca instrument 1
+  Music 18 toca instrument 4
+  Music 20 toca instrument 2
+Peça 11:
+  Inici: 12h 5 min
+  Final: 12h 30 min
+  Music 5 toca instrument 1
+  Music 6 toca instrument 1
+  Music 8 toca instrument 2
+  Music 9 toca instrument 2
+  Music 19 toca instrument 3
+Peça 12:
+  Inici: 12h 15 min
+  Final: 12h 55 min
+  Music 21 toca instrument 1
+  Music 22 toca instrument 4
+  Music 23 toca instrument 4
+  Music 24 toca instrument 1
+  Music 25 toca instrument 2
+Peça 13:
+  Inici: 12h 55 min
+  Final: 13h 40 min
+  Music 18 toca instrument 4
+  Music 20 toca instrument 3
+  Music 21 toca instrument 1
+  Music 22 toca instrument 4
+  Music 23 toca instrument 4
+  Music 24 toca instrument 1
+  Music 25 toca instrument 3
+Peça 14:
+  Inici: 11h 15 min
+  Final: 12h 5 min
+  Music 2 toca instrument 4
+  Music 3 toca instrument 2
+  Music 4 toca instrument 1
+  Music 5 toca instrument 2
+Peça 15:
+  Inici: 12h 30 min
+  Final: 13h 15 min
+  Music 6 toca instrument 1
+  Music 8 toca instrument 2
+  Music 9 toca instrument 1
+  Music 13 toca instrument 3
+  Music 19 toca instrument 3
+Peça 16:
+  Inici: 13h 40 min
+  Final: 14h 5 min
+  Music 18 toca instrument 4
+  Music 20 toca instrument 2
+  Music 21 toca instrument 1
+  Music 22 toca instrument 4
+  Music 23 toca instrument 4
+  Music 24 toca instrument 1
+  Music 25 toca instrument 2
+Peça 17:
+  Inici: 14h 5 min
+  Final: 14h 50 min
+  Music 16 toca instrument 2
+  Music 20 toca instrument 2
+  Music 21 toca instrument 1
+  Music 22 toca instrument 1
+  Music 23 toca instrument 3
+  Music 24 toca instrument 1
+  Music 25 toca instrument 2
+Peça 18:
+  Inici: 14h 50 min
+  Final: 14h 55 min
+  Music 16 toca instrument 2
+  Music 18 toca instrument 3
+  Music 19 toca instrument 3
+  Music 20 toca instrument 2
+  Music 22 toca instrument 4
+  Music 23 toca instrument 4
+  Music 25 toca instrument 3
+Peça 19:
+  Inici: 14h 55 min
+  Final: 15h 15 min
+  Music 16 toca instrument 2
+  Music 19 toca instrument 3
+  Music 20 toca instrument 2
+  Music 23 toca instrument 3
+  Music 24 toca instrument 1
+  Music 25 toca instrument 2
+Peça 20:
+  Inici: 14h 55 min
+  Final: 15h 45 min
+  Music 18 toca instrument 3
+  Music 21 toca instrument 1
+  Music 22 toca instrument 4
+----------
+%%%mzn-stat: boolVariables=20302
+%%%mzn-stat: failures=2212266
+%%%mzn-stat: objective=68
+%%%mzn-stat: objectiveBound=50
+%%%mzn-stat: propagations=810279548
+%%%mzn-stat: solveTime=1700.89
+%%%mzn-stat-end
+Hora d’inici del festival: 10h 0min 
+Hora d'acabada del festival: 15h 40min 
+Cost de contractació: 1871
+Peça 1:
+  Inici: 10h 40 min
+  Final: 11h 10 min
+  Music 18 toca instrument 4
+  Music 19 toca instrument 3
+  Music 20 toca instrument 3
+  Music 21 toca instrument 1
+  Music 22 toca instrument 4
+  Music 23 toca instrument 4
+  Music 24 toca instrument 1
+  Music 25 toca instrument 3
+Peça 2:
+  Inici: 10h 0 min
+  Final: 10h 40 min
+  Music 23 toca instrument 3
+  Music 24 toca instrument 1
+  Music 25 toca instrument 2
+Peça 3:
+  Inici: 10h 0 min
+  Final: 10h 25 min
+  Music 18 toca instrument 4
+  Music 19 toca instrument 3
+  Music 20 toca instrument 3
+  Music 21 toca instrument 1
+  Music 22 toca instrument 1
+Peça 4:
+  Inici: 10h 25 min
+  Final: 11h 5 min
+  Music 14 toca instrument 3
+  Music 15 toca instrument 3
+  Music 16 toca instrument 4
+  Music 17 toca instrument 1
+Peça 5:
+  Inici: 12h 5 min
+  Final: 12h 15 min
+  Music 21 toca instrument 1
+  Music 22 toca instrument 1
+  Music 23 toca instrument 3
+  Music 24 toca instrument 1
+  Music 25 toca instrument 2
+Peça 6:
+  Inici: 11h 35 min
+  Final: 12h 5 min
+  Music 11 toca instrument 2
+  Music 15 toca instrument 3
+  Music 16 toca instrument 2
+  Music 18 toca instrument 3
+  Music 19 toca instrument 3
+  Music 22 toca instrument 4
+  Music 23 toca instrument 4
+  Music 25 toca instrument 2
+Peça 7:
+  Inici: 11h 5 min
+  Final: 11h 35 min
+  Music 7 toca instrument 3
+  Music 10 toca instrument 2
+  Music 11 toca instrument 2
+  Music 13 toca instrument 3
+  Music 14 toca instrument 1
+  Music 15 toca instrument 3
+  Music 16 toca instrument 2
+  Music 17 toca instrument 1
+Peça 8:
+  Inici: 11h 5 min
+  Final: 11h 15 min
+  Music 1 toca instrument 4
+  Music 2 toca instrument 3
+  Music 3 toca instrument 2
+  Music 5 toca instrument 2
+  Music 8 toca instrument 2
+  Music 9 toca instrument 4
+  Music 12 toca instrument 4
+Peça 9:
+  Inici: 11h 15 min
+  Final: 12h 5 min
+  Music 6 toca instrument 1
+  Music 8 toca instrument 2
+  Music 9 toca instrument 2
+  Music 12 toca instrument 4
+  Music 20 toca instrument 2
+  Music 21 toca instrument 1
+  Music 24 toca instrument 1
+Peça 10:
+  Inici: 12h 5 min
+  Final: 12h 55 min
+  Music 10 toca instrument 2
+  Music 11 toca instrument 1
+  Music 12 toca instrument 4
+  Music 14 toca instrument 1
+  Music 15 toca instrument 4
+  Music 16 toca instrument 2
+  Music 17 toca instrument 1
+  Music 18 toca instrument 4
+  Music 20 toca instrument 2
+Peça 11:
+  Inici: 12h 5 min
+  Final: 12h 30 min
+  Music 5 toca instrument 1
+  Music 6 toca instrument 1
+  Music 8 toca instrument 2
+  Music 9 toca instrument 2
+  Music 19 toca instrument 3
+Peça 12:
+  Inici: 12h 15 min
+  Final: 12h 55 min
+  Music 21 toca instrument 1
+  Music 22 toca instrument 4
+  Music 23 toca instrument 4
+  Music 24 toca instrument 1
+  Music 25 toca instrument 2
+Peça 13:
+  Inici: 12h 55 min
+  Final: 13h 40 min
+  Music 18 toca instrument 4
+  Music 20 toca instrument 3
+  Music 21 toca instrument 1
+  Music 22 toca instrument 4
+  Music 23 toca instrument 4
+  Music 24 toca instrument 1
+  Music 25 toca instrument 3
+Peça 14:
+  Inici: 11h 15 min
+  Final: 12h 5 min
+  Music 2 toca instrument 4
+  Music 3 toca instrument 2
+  Music 4 toca instrument 1
+  Music 5 toca instrument 2
+Peça 15:
+  Inici: 12h 30 min
+  Final: 13h 15 min
+  Music 6 toca instrument 1
+  Music 8 toca instrument 2
+  Music 9 toca instrument 1
+  Music 13 toca instrument 3
+  Music 19 toca instrument 3
+Peça 16:
+  Inici: 14h 25 min
+  Final: 14h 50 min
+  Music 18 toca instrument 4
+  Music 20 toca instrument 2
+  Music 21 toca instrument 1
+  Music 22 toca instrument 4
+  Music 23 toca instrument 4
+  Music 24 toca instrument 1
+  Music 25 toca instrument 2
+Peça 17:
+  Inici: 13h 40 min
+  Final: 14h 25 min
+  Music 16 toca instrument 2
+  Music 20 toca instrument 2
+  Music 21 toca instrument 1
+  Music 22 toca instrument 1
+  Music 23 toca instrument 3
+  Music 24 toca instrument 1
+  Music 25 toca instrument 2
+Peça 18:
+  Inici: 15h 15 min
+  Final: 15h 20 min
+  Music 16 toca instrument 2
+  Music 18 toca instrument 3
+  Music 19 toca instrument 3
+  Music 20 toca instrument 2
+  Music 22 toca instrument 4
+  Music 23 toca instrument 4
+  Music 25 toca instrument 3
+Peça 19:
+  Inici: 15h 20 min
+  Final: 15h 40 min
+  Music 16 toca instrument 2
+  Music 19 toca instrument 3
+  Music 20 toca instrument 2
+  Music 23 toca instrument 3
+  Music 24 toca instrument 1
+  Music 25 toca instrument 2
+Peça 20:
+  Inici: 14h 25 min
+  Final: 15h 15 min
+  Music 16 toca instrument 4
+  Music 17 toca instrument 1
+  Music 19 toca instrument 3
+----------
+%%%mzn-stat: boolVariables=20303
+%%%mzn-stat: failures=2212271
+%%%mzn-stat: objective=63
+%%%mzn-stat: objectiveBound=50
+%%%mzn-stat: propagations=810321279
+%%%mzn-stat: solveTime=1709.87
+%%%mzn-stat-end
+Hora d’inici del festival: 10h 0min 
+Hora d'acabada del festival: 15h 15min 
+Cost de contractació: 1871
+Peça 1:
+  Inici: 10h 40 min
+  Final: 11h 10 min
+  Music 18 toca instrument 4
+  Music 19 toca instrument 3
+  Music 20 toca instrument 3
+  Music 21 toca instrument 1
+  Music 22 toca instrument 4
+  Music 23 toca instrument 4
+  Music 24 toca instrument 1
+  Music 25 toca instrument 3
+Peça 2:
+  Inici: 10h 0 min
+  Final: 10h 40 min
+  Music 23 toca instrument 3
+  Music 24 toca instrument 1
+  Music 25 toca instrument 2
+Peça 3:
+  Inici: 10h 0 min
+  Final: 10h 25 min
+  Music 18 toca instrument 4
+  Music 19 toca instrument 3
+  Music 20 toca instrument 3
+  Music 21 toca instrument 1
+  Music 22 toca instrument 1
+Peça 4:
+  Inici: 10h 25 min
+  Final: 11h 5 min
+  Music 14 toca instrument 3
+  Music 15 toca instrument 3
+  Music 16 toca instrument 4
+  Music 17 toca instrument 1
+Peça 5:
+  Inici: 12h 5 min
+  Final: 12h 15 min
+  Music 21 toca instrument 1
+  Music 22 toca instrument 1
+  Music 23 toca instrument 3
+  Music 24 toca instrument 1
+  Music 25 toca instrument 2
+Peça 6:
+  Inici: 11h 35 min
+  Final: 12h 5 min
+  Music 11 toca instrument 2
+  Music 15 toca instrument 3
+  Music 16 toca instrument 2
+  Music 18 toca instrument 3
+  Music 19 toca instrument 3
+  Music 22 toca instrument 4
+  Music 23 toca instrument 4
+  Music 25 toca instrument 2
+Peça 7:
+  Inici: 11h 5 min
+  Final: 11h 35 min
+  Music 7 toca instrument 3
+  Music 10 toca instrument 2
+  Music 11 toca instrument 2
+  Music 13 toca instrument 3
+  Music 14 toca instrument 1
+  Music 15 toca instrument 3
+  Music 16 toca instrument 2
+  Music 17 toca instrument 1
+Peça 8:
+  Inici: 11h 5 min
+  Final: 11h 15 min
+  Music 1 toca instrument 4
+  Music 2 toca instrument 3
+  Music 3 toca instrument 2
+  Music 5 toca instrument 2
+  Music 8 toca instrument 2
+  Music 9 toca instrument 4
+  Music 12 toca instrument 4
+Peça 9:
+  Inici: 11h 15 min
+  Final: 12h 5 min
+  Music 6 toca instrument 1
+  Music 8 toca instrument 2
+  Music 9 toca instrument 2
+  Music 12 toca instrument 4
+  Music 20 toca instrument 2
+  Music 21 toca instrument 1
+  Music 24 toca instrument 1
+Peça 10:
+  Inici: 12h 5 min
+  Final: 12h 55 min
+  Music 10 toca instrument 2
+  Music 11 toca instrument 1
+  Music 12 toca instrument 4
+  Music 14 toca instrument 1
+  Music 15 toca instrument 4
+  Music 16 toca instrument 2
+  Music 17 toca instrument 1
+  Music 18 toca instrument 4
+  Music 20 toca instrument 2
+Peça 11:
+  Inici: 12h 5 min
+  Final: 12h 30 min
+  Music 5 toca instrument 1
+  Music 6 toca instrument 1
+  Music 8 toca instrument 2
+  Music 9 toca instrument 2
+  Music 19 toca instrument 3
+Peça 12:
+  Inici: 12h 15 min
+  Final: 12h 55 min
+  Music 21 toca instrument 1
+  Music 22 toca instrument 4
+  Music 23 toca instrument 4
+  Music 24 toca instrument 1
+  Music 25 toca instrument 2
+Peça 13:
+  Inici: 12h 55 min
+  Final: 13h 40 min
+  Music 18 toca instrument 4
+  Music 20 toca instrument 3
+  Music 21 toca instrument 1
+  Music 22 toca instrument 4
+  Music 23 toca instrument 4
+  Music 24 toca instrument 1
+  Music 25 toca instrument 3
+Peça 14:
+  Inici: 11h 15 min
+  Final: 12h 5 min
+  Music 2 toca instrument 4
+  Music 3 toca instrument 2
+  Music 4 toca instrument 1
+  Music 5 toca instrument 2
+Peça 15:
+  Inici: 12h 30 min
+  Final: 13h 15 min
+  Music 6 toca instrument 1
+  Music 8 toca instrument 2
+  Music 9 toca instrument 1
+  Music 13 toca instrument 3
+  Music 19 toca instrument 3
+Peça 16:
+  Inici: 14h 25 min
+  Final: 14h 50 min
+  Music 18 toca instrument 4
+  Music 20 toca instrument 2
+  Music 21 toca instrument 1
+  Music 22 toca instrument 4
+  Music 23 toca instrument 4
+  Music 24 toca instrument 1
+  Music 25 toca instrument 2
+Peça 17:
+  Inici: 13h 40 min
+  Final: 14h 25 min
+  Music 16 toca instrument 2
+  Music 20 toca instrument 2
+  Music 21 toca instrument 1
+  Music 22 toca instrument 1
+  Music 23 toca instrument 3
+  Music 24 toca instrument 1
+  Music 25 toca instrument 2
+Peça 18:
+  Inici: 14h 50 min
+  Final: 14h 55 min
+  Music 16 toca instrument 2
+  Music 18 toca instrument 3
+  Music 19 toca instrument 3
+  Music 20 toca instrument 2
+  Music 22 toca instrument 4
+  Music 23 toca instrument 4
+  Music 25 toca instrument 3
+Peça 19:
+  Inici: 14h 55 min
+  Final: 15h 15 min
+  Music 16 toca instrument 2
+  Music 19 toca instrument 3
+  Music 20 toca instrument 2
+  Music 23 toca instrument 3
+  Music 24 toca instrument 1
+  Music 25 toca instrument 2
+Peça 20:
+  Inici: 14h 25 min
+  Final: 15h 15 min
+  Music 14 toca instrument 3
+  Music 15 toca instrument 4
+  Music 17 toca instrument 1
+----------
+%%%mzn-stat: boolVariables=20313
+%%%mzn-stat: failures=2212281
+%%%mzn-stat: objective=60
+%%%mzn-stat: objectiveBound=50
+%%%mzn-stat: propagations=810363760
+%%%mzn-stat: solveTime=1719.55
+%%%mzn-stat-end
+Hora d’inici del festival: 10h 0min 
+Hora d'acabada del festival: 15h 0min 
+Cost de contractació: 1870
+Peça 1:
+  Inici: 10h 40 min
+  Final: 11h 10 min
+  Music 18 toca instrument 4
+  Music 19 toca instrument 3
+  Music 20 toca instrument 3
+  Music 21 toca instrument 1
+  Music 22 toca instrument 4
+  Music 23 toca instrument 4
+  Music 24 toca instrument 1
+  Music 25 toca instrument 3
+Peça 2:
+  Inici: 10h 0 min
+  Final: 10h 40 min
+  Music 23 toca instrument 3
+  Music 24 toca instrument 1
+  Music 25 toca instrument 2
+Peça 3:
+  Inici: 10h 0 min
+  Final: 10h 25 min
+  Music 18 toca instrument 4
+  Music 19 toca instrument 3
+  Music 20 toca instrument 3
+  Music 21 toca instrument 1
+  Music 22 toca instrument 1
+Peça 4:
+  Inici: 10h 25 min
+  Final: 11h 5 min
+  Music 14 toca instrument 3
+  Music 15 toca instrument 3
+  Music 16 toca instrument 4
+  Music 17 toca instrument 1
+Peça 5:
+  Inici: 12h 5 min
+  Final: 12h 15 min
+  Music 21 toca instrument 1
+  Music 22 toca instrument 1
+  Music 23 toca instrument 3
+  Music 24 toca instrument 1
+  Music 25 toca instrument 2
+Peça 6:
+  Inici: 11h 35 min
+  Final: 12h 5 min
+  Music 11 toca instrument 2
+  Music 15 toca instrument 3
+  Music 16 toca instrument 2
+  Music 18 toca instrument 3
+  Music 19 toca instrument 3
+  Music 22 toca instrument 4
+  Music 23 toca instrument 4
+  Music 25 toca instrument 2
+Peça 7:
+  Inici: 11h 5 min
+  Final: 11h 35 min
+  Music 7 toca instrument 3
+  Music 10 toca instrument 2
+  Music 11 toca instrument 2
+  Music 13 toca instrument 3
+  Music 14 toca instrument 1
+  Music 15 toca instrument 3
+  Music 16 toca instrument 2
+  Music 17 toca instrument 1
+Peça 8:
+  Inici: 11h 5 min
+  Final: 11h 15 min
+  Music 1 toca instrument 4
+  Music 2 toca instrument 3
+  Music 3 toca instrument 2
+  Music 5 toca instrument 2
+  Music 8 toca instrument 2
+  Music 9 toca instrument 4
+  Music 12 toca instrument 4
+Peça 9:
+  Inici: 11h 15 min
+  Final: 12h 5 min
+  Music 6 toca instrument 1
+  Music 8 toca instrument 2
+  Music 9 toca instrument 2
+  Music 12 toca instrument 4
+  Music 20 toca instrument 2
+  Music 21 toca instrument 1
+  Music 24 toca instrument 1
+Peça 10:
+  Inici: 12h 5 min
+  Final: 12h 55 min
+  Music 10 toca instrument 2
+  Music 11 toca instrument 1
+  Music 12 toca instrument 4
+  Music 14 toca instrument 1
+  Music 15 toca instrument 4
+  Music 16 toca instrument 2
+  Music 17 toca instrument 1
+  Music 18 toca instrument 4
+  Music 20 toca instrument 2
+Peça 11:
+  Inici: 12h 5 min
+  Final: 12h 30 min
+  Music 5 toca instrument 1
+  Music 6 toca instrument 1
+  Music 8 toca instrument 2
+  Music 9 toca instrument 2
+  Music 19 toca instrument 3
+Peça 12:
+  Inici: 12h 15 min
+  Final: 12h 55 min
+  Music 21 toca instrument 1
+  Music 22 toca instrument 4
+  Music 23 toca instrument 4
+  Music 24 toca instrument 1
+  Music 25 toca instrument 2
+Peça 13:
+  Inici: 12h 55 min
+  Final: 13h 40 min
+  Music 18 toca instrument 4
+  Music 20 toca instrument 3
+  Music 21 toca instrument 1
+  Music 22 toca instrument 4
+  Music 23 toca instrument 4
+  Music 24 toca instrument 1
+  Music 25 toca instrument 3
+Peça 14:
+  Inici: 11h 15 min
+  Final: 12h 5 min
+  Music 2 toca instrument 4
+  Music 3 toca instrument 2
+  Music 4 toca instrument 1
+  Music 5 toca instrument 2
+Peça 15:
+  Inici: 12h 30 min
+  Final: 13h 15 min
+  Music 6 toca instrument 1
+  Music 8 toca instrument 2
+  Music 9 toca instrument 1
+  Music 13 toca instrument 3
+  Music 19 toca instrument 3
+Peça 16:
+  Inici: 13h 40 min
+  Final: 14h 5 min
+  Music 18 toca instrument 4
+  Music 20 toca instrument 2
+  Music 21 toca instrument 1
+  Music 22 toca instrument 4
+  Music 23 toca instrument 4
+  Music 24 toca instrument 1
+  Music 25 toca instrument 2
+Peça 17:
+  Inici: 13h 15 min
+  Final: 14h 0 min
+  Music 9 toca instrument 1
+  Music 10 toca instrument 2
+  Music 11 toca instrument 2
+  Music 14 toca instrument 1
+  Music 16 toca instrument 2
+  Music 17 toca instrument 1
+  Music 19 toca instrument 3
+Peça 18:
+  Inici: 14h 5 min
+  Final: 14h 10 min
+  Music 16 toca instrument 2
+  Music 18 toca instrument 3
+  Music 19 toca instrument 3
+  Music 20 toca instrument 2
+  Music 22 toca instrument 4
+  Music 23 toca instrument 4
+  Music 25 toca instrument 3
+Peça 19:
+  Inici: 14h 10 min
+  Final: 14h 30 min
+  Music 16 toca instrument 2
+  Music 19 toca instrument 3
+  Music 20 toca instrument 2
+  Music 23 toca instrument 3
+  Music 24 toca instrument 1
+  Music 25 toca instrument 2
+Peça 20:
+  Inici: 14h 10 min
+  Final: 15h 0 min
+  Music 18 toca instrument 3
+  Music 21 toca instrument 1
+  Music 22 toca instrument 4
+----------
+%%%mzn-stat: boolVariables=20315
+%%%mzn-stat: failures=2212287
+%%%mzn-stat: objective=59
+%%%mzn-stat: objectiveBound=50
+%%%mzn-stat: propagations=810414166
+%%%mzn-stat: solveTime=1730.19
+%%%mzn-stat-end
+Hora d’inici del festival: 10h 0min 
+Hora d'acabada del festival: 14h 55min 
+Cost de contractació: 1880
+Peça 1:
+  Inici: 10h 40 min
+  Final: 11h 10 min
+  Music 18 toca instrument 4
+  Music 19 toca instrument 3
+  Music 20 toca instrument 3
+  Music 21 toca instrument 1
+  Music 22 toca instrument 4
+  Music 23 toca instrument 4
+  Music 24 toca instrument 1
+  Music 25 toca instrument 3
+Peça 2:
+  Inici: 10h 0 min
+  Final: 10h 40 min
+  Music 23 toca instrument 3
+  Music 24 toca instrument 1
+  Music 25 toca instrument 2
+Peça 3:
+  Inici: 10h 0 min
+  Final: 10h 25 min
+  Music 18 toca instrument 4
+  Music 19 toca instrument 3
+  Music 20 toca instrument 3
+  Music 21 toca instrument 1
+  Music 22 toca instrument 1
+Peça 4:
+  Inici: 10h 25 min
+  Final: 11h 5 min
+  Music 14 toca instrument 3
+  Music 15 toca instrument 3
+  Music 16 toca instrument 4
+  Music 17 toca instrument 1
+Peça 5:
+  Inici: 12h 5 min
+  Final: 12h 15 min
+  Music 21 toca instrument 1
+  Music 22 toca instrument 1
+  Music 23 toca instrument 3
+  Music 24 toca instrument 1
+  Music 25 toca instrument 2
+Peça 6:
+  Inici: 11h 35 min
+  Final: 12h 5 min
+  Music 11 toca instrument 2
+  Music 15 toca instrument 3
+  Music 16 toca instrument 2
+  Music 18 toca instrument 3
+  Music 19 toca instrument 3
+  Music 22 toca instrument 4
+  Music 23 toca instrument 4
+  Music 25 toca instrument 2
+Peça 7:
+  Inici: 11h 5 min
+  Final: 11h 35 min
+  Music 7 toca instrument 3
+  Music 10 toca instrument 2
+  Music 11 toca instrument 2
+  Music 13 toca instrument 3
+  Music 14 toca instrument 1
+  Music 15 toca instrument 3
+  Music 16 toca instrument 2
+  Music 17 toca instrument 1
+Peça 8:
+  Inici: 11h 5 min
+  Final: 11h 15 min
+  Music 1 toca instrument 4
+  Music 2 toca instrument 3
+  Music 3 toca instrument 2
+  Music 5 toca instrument 2
+  Music 8 toca instrument 2
+  Music 9 toca instrument 4
+  Music 12 toca instrument 4
+Peça 9:
+  Inici: 11h 15 min
+  Final: 12h 5 min
+  Music 6 toca instrument 1
+  Music 8 toca instrument 2
+  Music 9 toca instrument 2
+  Music 12 toca instrument 4
+  Music 20 toca instrument 2
+  Music 21 toca instrument 1
+  Music 24 toca instrument 1
+Peça 10:
+  Inici: 12h 5 min
+  Final: 12h 55 min
+  Music 10 toca instrument 2
+  Music 11 toca instrument 1
+  Music 12 toca instrument 4
+  Music 14 toca instrument 1
+  Music 15 toca instrument 4
+  Music 16 toca instrument 2
+  Music 17 toca instrument 1
+  Music 18 toca instrument 4
+  Music 20 toca instrument 2
+Peça 11:
+  Inici: 12h 5 min
+  Final: 12h 30 min
+  Music 5 toca instrument 1
+  Music 6 toca instrument 1
+  Music 8 toca instrument 2
+  Music 9 toca instrument 2
+  Music 19 toca instrument 3
+Peça 12:
+  Inici: 12h 15 min
+  Final: 12h 55 min
+  Music 21 toca instrument 1
+  Music 22 toca instrument 4
+  Music 23 toca instrument 4
+  Music 24 toca instrument 1
+  Music 25 toca instrument 2
+Peça 13:
+  Inici: 12h 55 min
+  Final: 13h 40 min
+  Music 18 toca instrument 4
+  Music 20 toca instrument 3
+  Music 21 toca instrument 1
+  Music 22 toca instrument 4
+  Music 23 toca instrument 4
+  Music 24 toca instrument 1
+  Music 25 toca instrument 3
+Peça 14:
+  Inici: 11h 15 min
+  Final: 12h 5 min
+  Music 2 toca instrument 4
+  Music 3 toca instrument 2
+  Music 4 toca instrument 1
+  Music 5 toca instrument 2
+Peça 15:
+  Inici: 12h 30 min
+  Final: 13h 15 min
+  Music 6 toca instrument 1
+  Music 8 toca instrument 2
+  Music 9 toca instrument 1
+  Music 13 toca instrument 3
+  Music 19 toca instrument 3
+Peça 16:
+  Inici: 13h 40 min
+  Final: 14h 5 min
+  Music 18 toca instrument 4
+  Music 20 toca instrument 2
+  Music 21 toca instrument 1
+  Music 22 toca instrument 4
+  Music 23 toca instrument 4
+  Music 24 toca instrument 1
+  Music 25 toca instrument 2
+Peça 17:
+  Inici: 13h 15 min
+  Final: 14h 0 min
+  Music 9 toca instrument 1
+  Music 10 toca instrument 2
+  Music 11 toca instrument 2
+  Music 14 toca instrument 1
+  Music 16 toca instrument 2
+  Music 17 toca instrument 1
+  Music 19 toca instrument 3
+Peça 18:
+  Inici: 14h 5 min
+  Final: 14h 10 min
+  Music 16 toca instrument 2
+  Music 18 toca instrument 3
+  Music 19 toca instrument 3
+  Music 20 toca instrument 2
+  Music 22 toca instrument 4
+  Music 23 toca instrument 4
+  Music 25 toca instrument 3
+Peça 19:
+  Inici: 14h 10 min
+  Final: 14h 30 min
+  Music 16 toca instrument 2
+  Music 19 toca instrument 3
+  Music 20 toca instrument 2
+  Music 23 toca instrument 3
+  Music 24 toca instrument 1
+  Music 25 toca instrument 2
+Peça 20:
+  Inici: 14h 5 min
+  Final: 14h 55 min
+  Music 14 toca instrument 3
+  Music 15 toca instrument 4
+  Music 21 toca instrument 1
+----------
+%%%mzn-stat: boolVariables=20318
+%%%mzn-stat: failures=2212287
+%%%mzn-stat: objective=58
+%%%mzn-stat: objectiveBound=50
+%%%mzn-stat: propagations=810452065
+%%%mzn-stat: solveTime=1738.62
+%%%mzn-stat-end
+Hora d’inici del festival: 10h 0min 
+Hora d'acabada del festival: 14h 50min 
+Cost de contractació: 1880
+Peça 1:
+  Inici: 10h 40 min
+  Final: 11h 10 min
+  Music 18 toca instrument 4
+  Music 19 toca instrument 3
+  Music 20 toca instrument 3
+  Music 21 toca instrument 1
+  Music 22 toca instrument 4
+  Music 23 toca instrument 4
+  Music 24 toca instrument 1
+  Music 25 toca instrument 3
+Peça 2:
+  Inici: 10h 0 min
+  Final: 10h 40 min
+  Music 23 toca instrument 3
+  Music 24 toca instrument 1
+  Music 25 toca instrument 2
+Peça 3:
+  Inici: 10h 0 min
+  Final: 10h 25 min
+  Music 18 toca instrument 4
+  Music 19 toca instrument 3
+  Music 20 toca instrument 3
+  Music 21 toca instrument 1
+  Music 22 toca instrument 1
+Peça 4:
+  Inici: 10h 25 min
+  Final: 11h 5 min
+  Music 14 toca instrument 3
+  Music 15 toca instrument 3
+  Music 16 toca instrument 4
+  Music 17 toca instrument 1
+Peça 5:
+  Inici: 12h 5 min
+  Final: 12h 15 min
+  Music 21 toca instrument 1
+  Music 22 toca instrument 1
+  Music 23 toca instrument 3
+  Music 24 toca instrument 1
+  Music 25 toca instrument 2
+Peça 6:
+  Inici: 11h 35 min
+  Final: 12h 5 min
+  Music 11 toca instrument 2
+  Music 15 toca instrument 3
+  Music 16 toca instrument 2
+  Music 18 toca instrument 3
+  Music 19 toca instrument 3
+  Music 22 toca instrument 4
+  Music 23 toca instrument 4
+  Music 25 toca instrument 2
+Peça 7:
+  Inici: 11h 5 min
+  Final: 11h 35 min
+  Music 7 toca instrument 3
+  Music 10 toca instrument 2
+  Music 11 toca instrument 2
+  Music 13 toca instrument 3
+  Music 14 toca instrument 1
+  Music 15 toca instrument 3
+  Music 16 toca instrument 2
+  Music 17 toca instrument 1
+Peça 8:
+  Inici: 11h 5 min
+  Final: 11h 15 min
+  Music 1 toca instrument 4
+  Music 2 toca instrument 3
+  Music 3 toca instrument 2
+  Music 5 toca instrument 2
+  Music 8 toca instrument 2
+  Music 9 toca instrument 4
+  Music 12 toca instrument 4
+Peça 9:
+  Inici: 11h 15 min
+  Final: 12h 5 min
+  Music 6 toca instrument 1
+  Music 8 toca instrument 2
+  Music 9 toca instrument 2
+  Music 12 toca instrument 4
+  Music 20 toca instrument 2
+  Music 21 toca instrument 1
+  Music 24 toca instrument 1
+Peça 10:
+  Inici: 12h 5 min
+  Final: 12h 55 min
+  Music 10 toca instrument 2
+  Music 11 toca instrument 1
+  Music 12 toca instrument 4
+  Music 14 toca instrument 1
+  Music 15 toca instrument 4
+  Music 16 toca instrument 2
+  Music 17 toca instrument 1
+  Music 18 toca instrument 4
+  Music 20 toca instrument 2
+Peça 11:
+  Inici: 12h 5 min
+  Final: 12h 30 min
+  Music 5 toca instrument 1
+  Music 6 toca instrument 1
+  Music 8 toca instrument 2
+  Music 9 toca instrument 2
+  Music 19 toca instrument 3
+Peça 12:
+  Inici: 12h 15 min
+  Final: 12h 55 min
+  Music 21 toca instrument 1
+  Music 22 toca instrument 4
+  Music 23 toca instrument 4
+  Music 24 toca instrument 1
+  Music 25 toca instrument 2
+Peça 13:
+  Inici: 12h 55 min
+  Final: 13h 40 min
+  Music 18 toca instrument 4
+  Music 20 toca instrument 3
+  Music 21 toca instrument 1
+  Music 22 toca instrument 4
+  Music 23 toca instrument 4
+  Music 24 toca instrument 1
+  Music 25 toca instrument 3
+Peça 14:
+  Inici: 11h 15 min
+  Final: 12h 5 min
+  Music 2 toca instrument 4
+  Music 3 toca instrument 2
+  Music 4 toca instrument 1
+  Music 5 toca instrument 2
+Peça 15:
+  Inici: 12h 30 min
+  Final: 13h 15 min
+  Music 6 toca instrument 1
+  Music 8 toca instrument 2
+  Music 9 toca instrument 1
+  Music 13 toca instrument 3
+  Music 19 toca instrument 3
+Peça 16:
+  Inici: 13h 40 min
+  Final: 14h 5 min
+  Music 18 toca instrument 4
+  Music 20 toca instrument 2
+  Music 21 toca instrument 1
+  Music 22 toca instrument 4
+  Music 23 toca instrument 4
+  Music 24 toca instrument 1
+  Music 25 toca instrument 2
+Peça 17:
+  Inici: 13h 15 min
+  Final: 14h 0 min
+  Music 9 toca instrument 1
+  Music 10 toca instrument 2
+  Music 11 toca instrument 2
+  Music 14 toca instrument 1
+  Music 16 toca instrument 2
+  Music 17 toca instrument 1
+  Music 19 toca instrument 3
+Peça 18:
+  Inici: 14h 5 min
+  Final: 14h 10 min
+  Music 16 toca instrument 2
+  Music 18 toca instrument 3
+  Music 19 toca instrument 3
+  Music 20 toca instrument 2
+  Music 22 toca instrument 4
+  Music 23 toca instrument 4
+  Music 25 toca instrument 3
+Peça 19:
+  Inici: 14h 10 min
+  Final: 14h 30 min
+  Music 16 toca instrument 2
+  Music 19 toca instrument 3
+  Music 20 toca instrument 2
+  Music 23 toca instrument 3
+  Music 24 toca instrument 1
+  Music 25 toca instrument 2
+Peça 20:
+  Inici: 14h 0 min
+  Final: 14h 50 min
+  Music 14 toca instrument 3
+  Music 15 toca instrument 4
+  Music 17 toca instrument 1
+----------
+%%%mzn-stat: boolVariables=20320
+%%%mzn-stat: failures=2212289
+%%%mzn-stat: objective=54
+%%%mzn-stat: objectiveBound=50
+%%%mzn-stat: propagations=810491283
+%%%mzn-stat: solveTime=1748.27
+%%%mzn-stat-end
+Hora d’inici del festival: 10h 0min 
+Hora d'acabada del festival: 14h 30min 
+Cost de contractació: 1880
+Peça 1:
+  Inici: 10h 40 min
+  Final: 11h 10 min
+  Music 18 toca instrument 4
+  Music 19 toca instrument 3
+  Music 20 toca instrument 3
+  Music 21 toca instrument 1
+  Music 22 toca instrument 4
+  Music 23 toca instrument 4
+  Music 24 toca instrument 1
+  Music 25 toca instrument 3
+Peça 2:
+  Inici: 10h 0 min
+  Final: 10h 40 min
+  Music 23 toca instrument 3
+  Music 24 toca instrument 1
+  Music 25 toca instrument 2
+Peça 3:
+  Inici: 10h 0 min
+  Final: 10h 25 min
+  Music 18 toca instrument 4
+  Music 19 toca instrument 3
+  Music 20 toca instrument 3
+  Music 21 toca instrument 1
+  Music 22 toca instrument 1
+Peça 4:
+  Inici: 10h 25 min
+  Final: 11h 5 min
+  Music 14 toca instrument 3
+  Music 15 toca instrument 3
+  Music 16 toca instrument 4
+  Music 17 toca instrument 1
+Peça 5:
+  Inici: 12h 5 min
+  Final: 12h 15 min
+  Music 21 toca instrument 1
+  Music 22 toca instrument 1
+  Music 23 toca instrument 3
+  Music 24 toca instrument 1
+  Music 25 toca instrument 2
+Peça 6:
+  Inici: 11h 35 min
+  Final: 12h 5 min
+  Music 11 toca instrument 2
+  Music 15 toca instrument 3
+  Music 16 toca instrument 2
+  Music 18 toca instrument 3
+  Music 19 toca instrument 3
+  Music 22 toca instrument 4
+  Music 23 toca instrument 4
+  Music 25 toca instrument 2
+Peça 7:
+  Inici: 11h 5 min
+  Final: 11h 35 min
+  Music 7 toca instrument 3
+  Music 10 toca instrument 2
+  Music 11 toca instrument 2
+  Music 13 toca instrument 3
+  Music 14 toca instrument 1
+  Music 15 toca instrument 3
+  Music 16 toca instrument 2
+  Music 17 toca instrument 1
+Peça 8:
+  Inici: 11h 5 min
+  Final: 11h 15 min
+  Music 1 toca instrument 4
+  Music 2 toca instrument 3
+  Music 3 toca instrument 2
+  Music 5 toca instrument 2
+  Music 8 toca instrument 2
+  Music 9 toca instrument 4
+  Music 12 toca instrument 4
+Peça 9:
+  Inici: 11h 15 min
+  Final: 12h 5 min
+  Music 6 toca instrument 1
+  Music 8 toca instrument 2
+  Music 9 toca instrument 2
+  Music 12 toca instrument 4
+  Music 20 toca instrument 2
+  Music 21 toca instrument 1
+  Music 24 toca instrument 1
+Peça 10:
+  Inici: 12h 5 min
+  Final: 12h 55 min
+  Music 10 toca instrument 2
+  Music 11 toca instrument 1
+  Music 12 toca instrument 4
+  Music 14 toca instrument 1
+  Music 15 toca instrument 4
+  Music 16 toca instrument 2
+  Music 17 toca instrument 1
+  Music 18 toca instrument 4
+  Music 20 toca instrument 2
+Peça 11:
+  Inici: 12h 5 min
+  Final: 12h 30 min
+  Music 5 toca instrument 1
+  Music 6 toca instrument 1
+  Music 8 toca instrument 2
+  Music 9 toca instrument 2
+  Music 19 toca instrument 3
+Peça 12:
+  Inici: 12h 15 min
+  Final: 12h 55 min
+  Music 21 toca instrument 1
+  Music 22 toca instrument 4
+  Music 23 toca instrument 4
+  Music 24 toca instrument 1
+  Music 25 toca instrument 2
+Peça 13:
+  Inici: 12h 55 min
+  Final: 13h 40 min
+  Music 18 toca instrument 4
+  Music 20 toca instrument 3
+  Music 21 toca instrument 1
+  Music 22 toca instrument 4
+  Music 23 toca instrument 4
+  Music 24 toca instrument 1
+  Music 25 toca instrument 3
+Peça 14:
+  Inici: 11h 15 min
+  Final: 12h 5 min
+  Music 2 toca instrument 4
+  Music 3 toca instrument 2
+  Music 4 toca instrument 1
+  Music 5 toca instrument 2
+Peça 15:
+  Inici: 12h 30 min
+  Final: 13h 15 min
+  Music 6 toca instrument 1
+  Music 8 toca instrument 2
+  Music 9 toca instrument 1
+  Music 13 toca instrument 3
+  Music 19 toca instrument 3
+Peça 16:
+  Inici: 13h 40 min
+  Final: 14h 5 min
+  Music 18 toca instrument 4
+  Music 20 toca instrument 2
+  Music 21 toca instrument 1
+  Music 22 toca instrument 4
+  Music 23 toca instrument 4
+  Music 24 toca instrument 1
+  Music 25 toca instrument 2
+Peça 17:
+  Inici: 12h 55 min
+  Final: 13h 40 min
+  Music 5 toca instrument 1
+  Music 10 toca instrument 2
+  Music 11 toca instrument 2
+  Music 14 toca instrument 1
+  Music 15 toca instrument 3
+  Music 16 toca instrument 2
+  Music 17 toca instrument 1
+Peça 18:
+  Inici: 14h 5 min
+  Final: 14h 10 min
+  Music 16 toca instrument 2
+  Music 18 toca instrument 3
+  Music 19 toca instrument 3
+  Music 20 toca instrument 2
+  Music 22 toca instrument 4
+  Music 23 toca instrument 4
+  Music 25 toca instrument 3
+Peça 19:
+  Inici: 14h 10 min
+  Final: 14h 30 min
+  Music 16 toca instrument 2
+  Music 19 toca instrument 3
+  Music 20 toca instrument 2
+  Music 23 toca instrument 3
+  Music 24 toca instrument 1
+  Music 25 toca instrument 2
+Peça 20:
+  Inici: 13h 40 min
+  Final: 14h 30 min
+  Music 14 toca instrument 3
+  Music 15 toca instrument 4
+  Music 17 toca instrument 1
+----------
+%%%mzn-stat: boolVariables=20324
+%%%mzn-stat: failures=2212374
+%%%mzn-stat: objective=52
+%%%mzn-stat: objectiveBound=50
+%%%mzn-stat: propagations=810591333
+%%%mzn-stat: solveTime=1763.74
+%%%mzn-stat-end
+Hora d’inici del festival: 10h 0min 
+Hora d'acabada del festival: 14h 20min 
+Cost de contractació: 1876
+Peça 1:
+  Inici: 10h 40 min
+  Final: 11h 10 min
+  Music 18 toca instrument 4
+  Music 19 toca instrument 3
+  Music 20 toca instrument 3
+  Music 21 toca instrument 1
+  Music 22 toca instrument 4
+  Music 23 toca instrument 4
+  Music 24 toca instrument 1
+  Music 25 toca instrument 3
+Peça 2:
+  Inici: 10h 0 min
+  Final: 10h 40 min
+  Music 23 toca instrument 3
+  Music 24 toca instrument 1
+  Music 25 toca instrument 2
+Peça 3:
+  Inici: 10h 0 min
+  Final: 10h 25 min
+  Music 18 toca instrument 4
+  Music 19 toca instrument 3
+  Music 20 toca instrument 3
+  Music 21 toca instrument 1
+  Music 22 toca instrument 1
+Peça 4:
+  Inici: 10h 25 min
+  Final: 11h 5 min
+  Music 14 toca instrument 3
+  Music 15 toca instrument 3
+  Music 16 toca instrument 4
+  Music 17 toca instrument 1
+Peça 5:
+  Inici: 12h 5 min
+  Final: 12h 15 min
+  Music 21 toca instrument 1
+  Music 22 toca instrument 1
+  Music 23 toca instrument 3
+  Music 24 toca instrument 1
+  Music 25 toca instrument 2
+Peça 6:
+  Inici: 11h 35 min
+  Final: 12h 5 min
+  Music 11 toca instrument 2
+  Music 15 toca instrument 3
+  Music 16 toca instrument 2
+  Music 18 toca instrument 3
+  Music 19 toca instrument 3
+  Music 22 toca instrument 4
+  Music 23 toca instrument 4
+  Music 25 toca instrument 2
+Peça 7:
+  Inici: 11h 5 min
+  Final: 11h 35 min
+  Music 7 toca instrument 3
+  Music 10 toca instrument 2
+  Music 11 toca instrument 2
+  Music 13 toca instrument 3
+  Music 14 toca instrument 1
+  Music 15 toca instrument 3
+  Music 16 toca instrument 2
+  Music 17 toca instrument 1
+Peça 8:
+  Inici: 11h 5 min
+  Final: 11h 15 min
+  Music 1 toca instrument 4
+  Music 2 toca instrument 3
+  Music 3 toca instrument 2
+  Music 5 toca instrument 2
+  Music 8 toca instrument 2
+  Music 9 toca instrument 4
+  Music 12 toca instrument 4
+Peça 9:
+  Inici: 11h 15 min
+  Final: 12h 5 min
+  Music 6 toca instrument 1
+  Music 8 toca instrument 2
+  Music 9 toca instrument 2
+  Music 12 toca instrument 4
+  Music 20 toca instrument 2
+  Music 21 toca instrument 1
+  Music 24 toca instrument 1
+Peça 10:
+  Inici: 12h 5 min
+  Final: 12h 55 min
+  Music 10 toca instrument 2
+  Music 11 toca instrument 1
+  Music 12 toca instrument 4
+  Music 14 toca instrument 1
+  Music 15 toca instrument 4
+  Music 16 toca instrument 2
+  Music 17 toca instrument 1
+  Music 18 toca instrument 4
+  Music 20 toca instrument 2
+Peça 11:
+  Inici: 12h 5 min
+  Final: 12h 30 min
+  Music 5 toca instrument 1
+  Music 6 toca instrument 1
+  Music 8 toca instrument 2
+  Music 9 toca instrument 2
+  Music 19 toca instrument 3
+Peça 12:
+  Inici: 12h 5 min
+  Final: 12h 45 min
+  Music 1 toca instrument 4
+  Music 2 toca instrument 1
+  Music 3 toca instrument 2
+  Music 4 toca instrument 1
+  Music 7 toca instrument 4
+Peça 13:
+  Inici: 12h 55 min
+  Final: 13h 40 min
+  Music 16 toca instrument 3
+  Music 17 toca instrument 1
+  Music 18 toca instrument 4
+  Music 20 toca instrument 3
+  Music 22 toca instrument 4
+  Music 23 toca instrument 4
+  Music 25 toca instrument 1
+Peça 14:
+  Inici: 11h 15 min
+  Final: 12h 5 min
+  Music 2 toca instrument 4
+  Music 3 toca instrument 2
+  Music 4 toca instrument 1
+  Music 5 toca instrument 2
+Peça 15:
+  Inici: 12h 30 min
+  Final: 13h 15 min
+  Music 9 toca instrument 2
+  Music 13 toca instrument 3
+  Music 19 toca instrument 3
+  Music 21 toca instrument 1
+  Music 24 toca instrument 1
+Peça 16:
+  Inici: 13h 40 min
+  Final: 14h 5 min
+  Music 18 toca instrument 4
+  Music 20 toca instrument 2
+  Music 21 toca instrument 1
+  Music 22 toca instrument 4
+  Music 23 toca instrument 4
+  Music 24 toca instrument 1
+  Music 25 toca instrument 2
+Peça 17:
+  Inici: 12h 45 min
+  Final: 13h 30 min
+  Music 2 toca instrument 1
+  Music 3 toca instrument 2
+  Music 4 toca instrument 1
+  Music 5 toca instrument 2
+  Music 6 toca instrument 1
+  Music 7 toca instrument 3
+  Music 8 toca instrument 2
+Peça 18:
+  Inici: 14h 5 min
+  Final: 14h 10 min
+  Music 16 toca instrument 2
+  Music 18 toca instrument 3
+  Music 19 toca instrument 3
+  Music 20 toca instrument 2
+  Music 22 toca instrument 4
+  Music 23 toca instrument 4
+  Music 25 toca instrument 3
+Peça 19:
+  Inici: 13h 40 min
+  Final: 14h 0 min
+  Music 10 toca instrument 2
+  Music 11 toca instrument 2
+  Music 15 toca instrument 3
+  Music 16 toca instrument 2
+  Music 17 toca instrument 1
+  Music 19 toca instrument 3
+Peça 20:
+  Inici: 13h 30 min
+  Final: 14h 20 min
+  Music 12 toca instrument 4
+  Music 13 toca instrument 3
+  Music 14 toca instrument 1
+----------
+%%%mzn-stat: boolVariables=20329
+%%%mzn-stat: failures=2303153
+%%%mzn-stat: objective=50
+%%%mzn-stat: objectiveBound=50
+%%%mzn-stat: propagations=980481001
+%%%mzn-stat: solveTime=5425.96
+%%%mzn-stat-end
+Hora d’inici del festival: 10h 0min 
+Hora d'acabada del festival: 14h 10min 
+Cost de contractació: 1872
+Peça 1:
+  Inici: 10h 25 min
+  Final: 10h 55 min
+  Music 18 toca instrument 4
+  Music 19 toca instrument 3
+  Music 20 toca instrument 3
+  Music 21 toca instrument 1
+  Music 22 toca instrument 4
+  Music 23 toca instrument 4
+  Music 24 toca instrument 1
+  Music 25 toca instrument 3
+Peça 2:
+  Inici: 10h 0 min
+  Final: 10h 40 min
+  Music 15 toca instrument 3
+  Music 16 toca instrument 2
+  Music 17 toca instrument 1
+Peça 3:
+  Inici: 10h 0 min
+  Final: 10h 25 min
+  Music 21 toca instrument 1
+  Music 22 toca instrument 4
+  Music 23 toca instrument 3
+  Music 24 toca instrument 1
+  Music 25 toca instrument 3
+Peça 4:
+  Inici: 10h 25 min
+  Final: 11h 5 min
+  Music 11 toca instrument 1
+  Music 12 toca instrument 4
+  Music 13 toca instrument 3
+  Music 14 toca instrument 3
+Peça 5:
+  Inici: 10h 55 min
+  Final: 11h 5 min
+  Music 21 toca instrument 1
+  Music 22 toca instrument 1
+  Music 23 toca instrument 3
+  Music 24 toca instrument 1
+  Music 25 toca instrument 2
+Peça 6:
+  Inici: 11h 5 min
+  Final: 11h 35 min
+  Music 15 toca instrument 3
+  Music 16 toca instrument 2
+  Music 18 toca instrument 3
+  Music 19 toca instrument 3
+  Music 20 toca instrument 2
+  Music 22 toca instrument 4
+  Music 23 toca instrument 4
+  Music 25 toca instrument 2
+Peça 7:
+  Inici: 11h 35 min
+  Final: 12h 5 min
+  Music 16 toca instrument 2
+  Music 18 toca instrument 3
+  Music 19 toca instrument 3
+  Music 20 toca instrument 2
+  Music 22 toca instrument 1
+  Music 23 toca instrument 3
+  Music 24 toca instrument 1
+  Music 25 toca instrument 2
+Peça 8:
+  Inici: 11h 5 min
+  Final: 11h 15 min
+  Music 8 toca instrument 2
+  Music 9 toca instrument 2
+  Music 10 toca instrument 2
+  Music 11 toca instrument 4
+  Music 12 toca instrument 4
+  Music 13 toca instrument 3
+  Music 14 toca instrument 4
+Peça 9:
+  Inici: 11h 15 min
+  Final: 12h 5 min
+  Music 9 toca instrument 2
+  Music 10 toca instrument 2
+  Music 11 toca instrument 2
+  Music 12 toca instrument 4
+  Music 14 toca instrument 1
+  Music 17 toca instrument 1
+  Music 21 toca instrument 1
+Peça 10:
+  Inici: 12h 5 min
+  Final: 12h 55 min
+  Music 16 toca instrument 2
+  Music 17 toca instrument 1
+  Music 18 toca instrument 4
+  Music 20 toca instrument 2
+  Music 21 toca instrument 1
+  Music 22 toca instrument 4
+  Music 23 toca instrument 4
+  Music 24 toca instrument 1
+  Music 25 toca instrument 2
+Peça 11:
+  Inici: 12h 5 min
+  Final: 12h 30 min
+  Music 9 toca instrument 1
+  Music 10 toca instrument 2
+  Music 11 toca instrument 2
+  Music 14 toca instrument 1
+  Music 19 toca instrument 3
+Peça 12:
+  Inici: 11h 35 min
+  Final: 12h 15 min
+  Music 4 toca instrument 1
+  Music 6 toca instrument 1
+  Music 7 toca instrument 4
+  Music 8 toca instrument 2
+  Music 15 toca instrument 4
+Peça 13:
+  Inici: 12h 55 min
+  Final: 13h 40 min
+  Music 18 toca instrument 4
+  Music 20 toca instrument 3
+  Music 21 toca instrument 1
+  Music 22 toca instrument 4
+  Music 23 toca instrument 4
+  Music 24 toca instrument 1
+  Music 25 toca instrument 3
+Peça 14:
+  Inici: 11h 15 min
+  Final: 12h 5 min
+  Music 1 toca instrument 4
+  Music 2 toca instrument 1
+  Music 3 toca instrument 2
+  Music 5 toca instrument 2
+Peça 15:
+  Inici: 12h 30 min
+  Final: 13h 15 min
+  Music 10 toca instrument 2
+  Music 11 toca instrument 1
+  Music 14 toca instrument 1
+  Music 15 toca instrument 3
+  Music 19 toca instrument 3
+Peça 16:
+  Inici: 13h 40 min
+  Final: 14h 5 min
+  Music 18 toca instrument 4
+  Music 20 toca instrument 2
+  Music 21 toca instrument 1
+  Music 22 toca instrument 4
+  Music 23 toca instrument 4
+  Music 24 toca instrument 1
+  Music 25 toca instrument 2
+Peça 17:
+  Inici: 12h 30 min
+  Final: 13h 15 min
+  Music 3 toca instrument 1
+  Music 4 toca instrument 1
+  Music 5 toca instrument 2
+  Music 6 toca instrument 1
+  Music 8 toca instrument 2
+  Music 9 toca instrument 2
+  Music 13 toca instrument 3
+Peça 18:
+  Inici: 14h 5 min
+  Final: 14h 10 min
+  Music 16 toca instrument 2
+  Music 18 toca instrument 3
+  Music 19 toca instrument 3
+  Music 20 toca instrument 2
+  Music 22 toca instrument 4
+  Music 23 toca instrument 4
+  Music 25 toca instrument 3
+Peça 19:
+  Inici: 13h 15 min
+  Final: 13h 35 min
+  Music 10 toca instrument 2
+  Music 11 toca instrument 2
+  Music 15 toca instrument 3
+  Music 16 toca instrument 2
+  Music 17 toca instrument 1
+  Music 19 toca instrument 3
+Peça 20:
+  Inici: 13h 15 min
+  Final: 14h 5 min
+  Music 12 toca instrument 4
+  Music 13 toca instrument 3
+  Music 14 toca instrument 1
+----------
+==========
+%%%mzn-stat: nSolutions=12
+%%%mzn-stat-end
+%%%mzn-stat: boolVariables=20329
+%%%mzn-stat: failures=2303153
+%%%mzn-stat: objective=50
+%%%mzn-stat: objectiveBound=50
+%%%mzn-stat: propagations=980481002
+%%%mzn-stat: solveTime=5426.07
+%%%mzn-stat-end
+Finished in 1h 30m 31s.

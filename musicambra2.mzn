@@ -8,7 +8,7 @@ array[1..nPeces] of int: durada;                    % Durada de les peces.
 array[1..nPeces] of int: d = [durada[i] div 5 | i in 1..nPeces];
 array[1..nPeces,1..nInstruments] of int: requereix;   % Instruments requerits per cada peça
 array[1..nMusics,1..nInstruments] of bool: saptocar;  % True si el music sap tocar l'instrument en qüestió
-
+%array[1..nMusics] of int: saptocarNum;
 int: pressupost;      
 array[1..nMusics] of int: salari;
 
@@ -18,16 +18,33 @@ array[1..nPrecs] of 1..nPeces: succ;
 
 int: dummyUB = sum(i in 1..nPeces)(d[i]);
 
+array[1..nPeces,1..nMusics] of var 0..nInstruments: musicsAssignats;
+
 array [1..nPeces] of var 0..dummyUB: s;  % Temps d'inici de cada peça
 var 0..pressupost: preu = sum([d[i]*salari[j]| j in 1..nMusics, i in 1..nPeces where musicsAssignats[i,j]!=0]);               % Pressupost
 
+%array [0..2*nInstruments-1] of var 0..nMusics: poolCapacitats;
+
+ %Define a function to convert a boolean array to an integer
+/*function var int: boolArrayToInt(array[int] of var bool: arr) = 
+  sum(i in index_set(arr))(bool2int(arr[i]) * pow(2, i-1));
+
+% Create an array to hold the unique skill sets
+array[0..pow(2, nInstruments)-1] of var 0..nMusics: poolCapacitats = 
+  array1d(0..pow(2, nInstruments)-1, [ sum(j in 1..nMusics)(boolArrayToInt([saptocar[j,k] | k in 1..nInstruments]) = i) | i in 0..pow(2, nInstruments)-1 ]);*/
+
 %array[1..nInstruments] of int: poolInstruments = [sum(j in 1..nMusics)(saptocar[j,i])| i in 1..nInstruments]; % Number of each instrument we have.
-array[1..nPeces,1..nMusics] of var 0..nInstruments: musicsAssignats;
+
+/*
+constraint forall(i in 1..nPeces)(
+  if exists(j in 1..nPrecs)(i = succ[j]) then s[i] != 0 endif
+);*/
 
 % Constraint que assegura que es respecta la prioritat
 constraint forall(i in 1..nPrecs) (
   s[succ[i]] >= s[pred[i]]+d[pred[i]]
 );
+
 
 /*constraint forall(i in 1..nPrecs, j in 1..nPrecs) (
   if succ[i] == pred[j] then
@@ -36,12 +53,20 @@ constraint forall(i in 1..nPrecs) (
 );*/
 
 % La primera cançó ha de començar al principi del festival
-%constraint min([s[i] | i in 1..nPeces]) = 0;
+constraint min([s[i] | i in 1..nPeces]) = 0;
+
+
+% Una cançó o bé comença al principi, o bé comença quan una altra cançó acaba (útil?)
+
+/*constraint forall(i in 1..nPeces)(
+  s[i] = 0 \/ exists(j in 1..nPeces where j != i)(s[j] + d[j] = s[i])
+);*/
 
 % Que cada peça tingui els instruments que necessita durant l'execució
 constraint forall(i in 1..nPeces, j in 1..nInstruments)(
     count([musicsAssignats[i,k]|k in 1..nMusics], j) == requereix[i,j]
 );
+
 
 % Que un music toqui un instrument que li toca.
 constraint forall(i in 1..nPeces, j in 1..nMusics)(
@@ -52,6 +77,40 @@ constraint forall(i in 1..nPeces, j in 1..nMusics)(
 constraint forall(i in 1..nPeces, m in 1..nMusics, j in 1..nPeces)( % Per tots els inicis, Per tots els músics  Per totes les peçes
       if s[i] <= s[j] /\ s[i] + d[i] > s[j] /\ i!=j then musicsAssignats[i,m]*musicsAssignats[j,m]=0 endif
 );
+/*
+constraint forall(i in 1..nPeces, j in 1..nMusics) (
+    % si j toca a i
+    if musicsAssignats[i,j] > 0 then
+        forall(k in 1..nMusics) (
+            % si k sap tocar el que toca j
+            % si j cobra més que k
+            if saptocar[k,musicsAssignats[i,j]] /\ salari[j] > salari[k] then
+                %cal que k estigui assignat a una altra peça concurrent
+                exists(l in 1..nPeces) (
+                    musicsAssignats[l,k] > 0 /\ s[i] <= s[l] /\ s[i] + d[i] > s[l]
+                )
+            endif
+        )
+    endif
+);*/
+
+/*
+constraint forall(i in 1..nPeces, j in 1..nMusics) (
+    % si j toca a i
+    if musicsAssignats[i,j] > 0 then
+        forall(k in 1..nMusics) (
+            % si k sap tocar el que toca j
+            % si j cobra més que k
+            if forall(m in 1..nInstruments)(saptocar[k,m] = saptocar[j,m]) /\ salari[j] > salari[k] then
+                %cal que k estigui assignat a una altra peça concurrent
+                exists(l in 1..nPeces) (
+                    musicsAssignats[l,k] > 0 /\ s[i] <= s[l] /\ s[i] + d[i] > s[l]
+                )
+            endif
+        )
+    endif
+);*/
+
 
 %solve minimize max([s[i]+d[i]| i in 1..nPeces])*pressupost + preu;
 solve minimize max([s[i]+d[i]| i in 1..nPeces]);
