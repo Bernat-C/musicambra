@@ -21,6 +21,7 @@ int: dummyUB = sum(i in 1..nPeces)(d[i]);
 array[1..nPeces,1..nMusics] of var 0..nInstruments: musicsAssignats;
 
 array [1..nPeces] of var 0..dummyUB: s;  % Temps d'inici de cada peça
+array [1..nPeces] of var 0..dummyUB: f;  % Temps de finalització de cada peça
 var 0..pressupost: preu = sum([d[i]*salari[j]| j in 1..nMusics, i in 1..nPeces where musicsAssignats[i,j]!=0]);               % Pressupost
 
 %array [0..2*nInstruments-1] of var 0..nMusics: poolCapacitats;
@@ -74,8 +75,17 @@ constraint forall(i in 1..nPeces, j in 1..nMusics)(
 );
 
 % Constraint que assegura que un músic no pugui de tocar dos peces simultàniament
-constraint forall(i in 1..nPeces, m in 1..nMusics, j in 1..nPeces)( % Per tots els inicis, Per tots els músics  Per totes les peçes
+% Nota: no podem fer j in i+1..nPeces ja que en alguns casos no es detectaria la concurrència de dues peces
+/*constraint forall(i in 1..nPeces, m in 1..nMusics, j in 1..nPeces)(
+      % Si dues peces són concurrents, llavors un mateix músic no pot tocar a les dues
       if s[i] <= s[j] /\ s[i] + d[i] > s[j] /\ i!=j then musicsAssignats[i,m]*musicsAssignats[j,m]=0 endif
+);*/
+
+constraint forall(i in 1..nPeces)(f[i] = s[i] + d[i]);
+% Constraint que assegura que un músic no pugui de tocar dos peces simultàniament (però més eficient)
+constraint forall(i in 1..nPeces, m in 1..nMusics, j in i..nPeces)(
+      % Si dues peces són concurrents, llavors un mateix músic no pot tocar a les dues
+      if (s[i] <= s[j] /\ f[i] > s[j] \/ s[j] <= s[i] /\ f[j] > s[i]) /\ i!=j then musicsAssignats[i,m]*musicsAssignats[j,m]=0 endif
 );
 /*
 constraint forall(i in 1..nPeces, j in 1..nMusics) (

@@ -18,11 +18,10 @@ array[1..nPrecs] of 1..nPeces: succ;
 
 int: dummyUB = sum(i in 1..nPeces)(d[i]);
 
-array[1..nPeces,1..nMusics] of var 0..nInstruments: musicsAssignats;
+array[1..nPeces,1..nMusics, 0..dummyUB] of var 0..nInstruments: musicsAssignats;
 
 array [1..nPeces, 0..dummyUB] of var bool: x;  % Si una peça s'està executant en un temps
-var 0..pressupost: preu = sum([d[i]*salari[j]| j in 1..nMusics, i in 1..nPeces where musicsAssignats[i,j]!=0]);               % Pressupost
-
+var 0..pressupost: preu = sum([d[i]*salari[j] | i in 1..nPeces, j in 1..nMusics where exists(k in 0..dummyUB)(musicsAssignats[i,j,k] != 0)]);
 % Constraint que assegura que es respecta la prioritat
 constraint forall(i in 1..nPrecs, j in 0..dummyUB, t in j..dummyUB) (
     % x[succ[i],j] -> not x[pred[i],t]
@@ -48,10 +47,9 @@ constraint forall(p in 1..nPeces) (
   min_values[p] = 0 \/ exists(q in 1..nPeces where q != p) (min_values[p] = max_values[q] + 1)
 );*/
 
-
 % Que cada peça tingui els instruments que necessita durant l'execució
-constraint forall(i in 1..nPeces, j in 1..nInstruments)(
-    count([musicsAssignats[i,k]|k in 1..nMusics], j) == requereix[i,j]
+constraint forall(i in 1..nPeces, j in 1..nInstruments, m in min_values[i]..max_values[i])(
+    count([musicsAssignats[i,k,m]|k in 1..nMusics], j) == requereix[i,j]
 );
 
 % Que cada cançó duri el que ha de durar
@@ -59,15 +57,21 @@ constraint forall(i in 1..nPeces)(
     count([x[i,t]|t in 0..dummyUB], true) == d[i]
 );
 
+% Un músic ha de tocar el mateix instrument durant una cançó
+constraint forall(i in 1..nPeces, j in 1..nMusics, k in min_values[i]+1..max_values[i]) (
+    musicsAssignats[i,j,k] = musicsAssignats[i,j,min_values[i]]
+);
+
 % Que un music toqui un instrument que li toca.
-constraint forall(i in 1..nPeces, j in 1..nMusics)(
-    if musicsAssignats[i,j]!=0 then saptocar[j,musicsAssignats[i,j]] endif
+constraint forall(i in 1..nPeces, j in 1..nMusics, k in min_values[i]..max_values[i])(
+    if musicsAssignats[i,j,k]!=0 then saptocar[j,musicsAssignats[i,j,k]] endif
 );
 
 % Constraint que assegura que un músic no pugui de tocar dos peces simultàniament
-constraint forall(i in 1..nPeces, j in i..nPeces, t in 0..dummyUB, m in 1..nMusics)( % Per tots els inicis, Per tots els músics
-      if x[i,t] /\ x[j,t] /\ i!=j then musicsAssignats[i,m]*musicsAssignats[j,m]=0 endif
+constraint forall(i in 1..nPeces, m in 1..nMusics, j in i..nPeces, k in max(min_values[i], min_values[j])..min(max_values[i], max_values[j])) (
+  if (min_values[i] <= min_values[j] /\ max_values[i] > min_values[j] \/ min_values[j] <= min_values[i] /\ max_values[j] > min_values[i]) /\ i!=j then musicsAssignats[i,m,k]*musicsAssignats[j,m,k]=0 endif
 );
+
 
 %solve minimize max([s[i]+d[i]| i in 1..nPeces])*pressupost + preu;
 solve minimize max([t| i in 1..nPeces, t in 0..dummyUB where x[i,t]]);
@@ -89,5 +93,5 @@ output [
   "Peça " ++ show(p) ++ ":\n" ++ 
   "  Inici: " ++ show(fix(10+min_values[p]*5 div 60)) ++ "h " ++ show(fix(min_values[p]*5 mod 60)) ++ " min\n" ++ 
   "  Final: " ++ show(fix(10+((max_values[p]+1)*5 div 60))) ++ "h " ++ show(fix((max_values[p]+1) * 5 mod 60)) ++ " min\n" ++ 
-  concat(["  Music " ++ show(m) ++ " toca instrument " ++ show(fix(musicsAssignats[p,m])) ++ "\n" | m in 1..nMusics where fix(musicsAssignats[p,m])!=0]) |  p in 1..nPeces ];
+  concat(["  Music " ++ show(m) ++ " toca instrument " ++ show(fix(musicsAssignats[p,m,min_values[p]])) ++ "\n" | m in 1..nMusics where fix(musicsAssignats[p,m,min_values[p]])!=0]) |  p in 1..nPeces ];
 
