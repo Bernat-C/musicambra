@@ -8,7 +8,7 @@ array[1..nPeces] of int: durada;                    % Durada de les peces.
 array[1..nPeces] of int: d = [durada[i] div 5 | i in 1..nPeces];
 array[1..nPeces,1..nInstruments] of int: requereix;   % Instruments requerits per cada peça
 array[1..nMusics,1..nInstruments] of bool: saptocar;  % True si el music sap tocar l'instrument en qüestió
-%array[1..nMusics] of int: saptocarNum;
+
 int: pressupost;      
 array[1..nMusics] of int: salari;
 
@@ -36,6 +36,9 @@ constraint forall(i in 1..nPeces, j in 1..nInstruments)(
     count([musicsAssignats[i,k]|k in 1..nMusics], j) == requereix[i,j]
 );
 
+constraint forall(i in 1..nPeces)(
+    count([x[i,t]|t in 0..dummyUB], true) == d[i]
+);
 
 % Que un music toqui un instrument que li toca.
 constraint forall(i in 1..nPeces, j in 1..nMusics)(
