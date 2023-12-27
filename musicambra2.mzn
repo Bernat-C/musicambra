@@ -81,6 +81,7 @@ constraint forall(i in 1..nPeces, j in 1..nMusics)(
       if s[i] <= s[j] /\ s[i] + d[i] > s[j] /\ i!=j then musicsAssignats[i,m]*musicsAssignats[j,m]=0 endif
 );*/
 
+
 constraint forall(i in 1..nPeces)(f[i] = s[i] + d[i]);
 % Constraint que assegura que un músic no pugui de tocar dos peces simultàniament (però més eficient)
 constraint forall(i in 1..nPeces, m in 1..nMusics, j in i..nPeces)(
