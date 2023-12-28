@@ -34,7 +34,7 @@ var 0..pressupost: preu = sum([d[i]*salari[j]| j in 1..nMusics, i in 1..nPeces w
 array[0..pow(2, nInstruments)-1] of var 0..nMusics: poolCapacitats = 
   array1d(0..pow(2, nInstruments)-1, [ sum(j in 1..nMusics)(boolArrayToInt([saptocar[j,k] | k in 1..nInstruments]) = i) | i in 0..pow(2, nInstruments)-1 ]);*/
 
-%array[1..nInstruments] of int: poolInstruments = [sum(j in 1..nMusics)(saptocar[j,i])| i in 1..nInstruments]; % Number of each instrument we have.
+array[1..nInstruments] of int: poolInstruments = [sum(j in 1..nMusics)(saptocar[j,i])| i in 1..nInstruments]; % Number of each instrument we have.
 
 /*
 constraint forall(i in 1..nPeces)(
@@ -46,6 +46,14 @@ constraint forall(i in 1..nPrecs) (
   s[succ[i]] >= s[pred[i]]+d[pred[i]]
 );
 
+/*constraint forall(p in 1..nPeces, m in 1..nMusics) (
+  let { 
+    var bool: foundInstrument = false;
+  } in 
+  if not exists(i in 1..nInstruments) (saptocar[m, i] /\ requereix[p, i]>0) then 
+    musicsAssignats[p, m] = 0
+  endif
+);*7
 
 /*constraint forall(i in 1..nPrecs, j in 1..nPrecs) (
   if succ[i] == pred[j] then
@@ -84,10 +92,26 @@ constraint forall(i in 1..nPeces, j in 1..nMusics)(
 
 %constraint forall(i in 1..nPeces)(f[i] = s[i] + d[i]);
 % Constraint que assegura que un músic no pugui de tocar dos peces simultàniament (però més eficient)
-constraint forall(i in 1..nPeces, m in 1..nMusics, j in i..nPeces)(
+/*constraint forall(i in 1..nPeces, m in 1..nMusics, j in i..nPeces)(
       % Si dues peces són concurrents, llavors un mateix músic no pot tocar a les dues
       if (s[i] <= s[j] /\ s[i] + d[i] > s[j] \/ s[j] <= s[i] /\ s[j] + d[j] > s[i]) /\ i!=j then musicsAssignats[i,m]*musicsAssignats[j,m]=0 endif
+);*/
+
+
+constraint forall(i in 1..nPeces, m in 1..nMusics, j in (i+1)..nPeces)(
+      % Si dues peces són concurrents, llavors un mateix músic no pot tocar a les dues
+      if musicsAssignats[i,m] != 0 /\ musicsAssignats[j,m] != 0 then
+        disjunctive([s[i],s[j]],[d[i],d[j]])
+      endif
 );
+
+
+
+% Assegura que per cada instrument en cap moment s'assignin més peces que el toquen que els musics que el saben tocar.
+constraint forall(i in 1..nInstruments) (
+  cumulative(s,d,[requereix[p,i]|p in 1..nPeces],poolInstruments[i])
+);
+
 /*
 constraint forall(i in 1..nPeces, j in 1..nMusics) (
     % si j toca a i
