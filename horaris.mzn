@@ -41,6 +41,9 @@ constraint forall(i in 1..nPeces)(
   if exists(j in 1..nPrecs)(i = succ[j]) then s[i] != 0 endif
 );*/
 
+% Assegura que apareixeran el nombre d'instruments que son requerits. No pot ser global cardinality closed perquè no existeix l'instrument 0.
+%constraint global_cardinality([musicsAssignats[i,j]|i in 1..nPeces, j in 1..nMusics],[i|i in 1..nInstruments],[sum([requereix[p,i] | p in 1..nPeces])|i in 1..nInstruments]);
+
 % Constraint que assegura que es respecta la prioritat
 constraint forall(i in 1..nPrecs) (
   s[succ[i]] >= s[pred[i]]+d[pred[i]]
@@ -104,8 +107,6 @@ constraint forall(i in 1..nPeces, m in 1..nMusics, j in (i+1)..nPeces)(
         disjunctive([s[i],s[j]],[d[i],d[j]])
       endif
 );
-
-
 
 % Assegura que per cada instrument en cap moment s'assignin més peces que el toquen que els musics que el saben tocar.
 constraint forall(i in 1..nInstruments) (
