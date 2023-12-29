@@ -21,7 +21,7 @@ int: dummyUB = sum(i in 1..nPeces)(d[i]);
 array[1..nPeces,1..nMusics] of var 0..nInstruments: musicsAssignats;
 
 array [1..nPeces] of var 0..dummyUB: s;  % Temps d'inici de cada peça
-array [1..nPeces] of var 0..dummyUB: f;  % Temps de finalització de cada peça
+%array [1..nPeces] of var 0..dummyUB: f;  % Temps de finalització de cada peça
 var 0..pressupost: preu = sum([d[i]*salari[j]| j in 1..nMusics, i in 1..nPeces where musicsAssignats[i,j]!=0]);               % Pressupost
 
 %array [0..2*nInstruments-1] of var 0..nMusics: poolCapacitats;
@@ -44,10 +44,25 @@ constraint forall(i in 1..nPeces)(
 % Assegura que apareixeran el nombre d'instruments que son requerits. No pot ser global cardinality closed perquè no existeix l'instrument 0.
 %constraint global_cardinality([musicsAssignats[i,j]|i in 1..nPeces, j in 1..nMusics],[i|i in 1..nInstruments],[sum([requereix[p,i] | p in 1..nPeces])|i in 1..nInstruments]);
 
+% Lower bound per el màxim de temps
+constraint max([s[i]+d[i]| i in 1..nPeces]) > max([sum([d[p]*requereix[p,i]/poolInstruments[i]| p in 1..nPeces]) | i in 1..nInstruments]);
+
 % Constraint que assegura que es respecta la prioritat
 constraint forall(i in 1..nPrecs) (
   s[succ[i]] >= s[pred[i]]+d[pred[i]]
 );
+
+% Una cançó o bé comença al principi, o bé comença quan una altra cançó acaba (útil?)
+
+/*constraint forall(i in 1..nPeces)(
+  s[i] = 0 \/ exists(j in 1..nPeces where j != i)(s[j] + d[j] = s[i])
+);*/
+
+/*constraint forall(p in 1..nPeces, j in 1..nPeces) (
+  if all_equal([requereix[p,i]| i in 1..nInstruments], [requereix[j,i]| i in 1..nInstruments]) then
+    s[p]<s[j]
+  endif
+);*/
 
 /*constraint forall(p in 1..nPeces, m in 1..nMusics) (
   let { 
@@ -67,13 +82,6 @@ constraint forall(i in 1..nPrecs) (
 % La primera cançó ha de començar al principi del festival
 constraint min([s[i] | i in 1..nPeces]) = 0;
 
-
-% Una cançó o bé comença al principi, o bé comença quan una altra cançó acaba (útil?)
-
-/*constraint forall(i in 1..nPeces)(
-  s[i] = 0 \/ exists(j in 1..nPeces where j != i)(s[j] + d[j] = s[i])
-);*/
-
 % Que cada peça tingui els instruments que necessita durant l'execució
 constraint forall(i in 1..nPeces, j in 1..nInstruments)(
     count([musicsAssignats[i,k]|k in 1..nMusics], j) == requereix[i,j]
@@ -92,6 +100,18 @@ constraint forall(i in 1..nPeces, j in 1..nMusics)(
       if s[i] <= s[j] /\ s[i] + d[i] > s[j] /\ i!=j then musicsAssignats[i,m]*musicsAssignats[j,m]=0 endif
 );*/
 
+/* Si dos músics son exactament iguals farem servir més el que cobra menys */
+constraint forall(i in 1..nMusics, j in i..nMusics)(
+  if forall(k in 1..nInstruments)(saptocar[i,k] = saptocar[j,k]) then
+    if salari[i] <= salari[j] then
+      sum([d[p] | p in 1..nPeces where musicsAssignats[p,i]>0]) >= sum([d[p] | p in 1..nPeces where musicsAssignats[p,j]>0])
+    else
+      sum([d[p] | p in 1..nPeces where musicsAssignats[p,i]>0]) <= sum([d[p] | p in 1..nPeces where musicsAssignats[p,j]>0])
+    endif
+  endif
+);
+
+% LB
 
 %constraint forall(i in 1..nPeces)(f[i] = s[i] + d[i]);
 % Constraint que assegura que un músic no pugui de tocar dos peces simultàniament (però més eficient)
@@ -112,6 +132,9 @@ constraint forall(i in 1..nPeces, m in 1..nMusics, j in (i+1)..nPeces)(
 constraint forall(i in 1..nInstruments) (
   cumulative(s,d,[requereix[p,i]|p in 1..nPeces],poolInstruments[i])
 );
+
+% Constraint per dir que no es poden executar més musics a la vegada que els que tenim.
+%constraint cumulative(s,d,[sum([requereix[p,i] | i in 1..nInstruments])|p in 1..nPeces],nMusics);
 
 /*
 constraint forall(i in 1..nPeces, j in 1..nMusics) (
@@ -160,7 +183,7 @@ output[
 ] ++ [
   "Peça " ++ show(p) ++ ":\n" ++ 
   "  Inici: " ++ show(fix(10+s[p]*5 div 60)) ++ "h " ++ show(fix(s[p]*5 mod 60)) ++ " min\n" ++ 
-  "  Final: " ++ show(fix(10+((s[p]*5+d[p]*5) div 60))) ++ "h " ++ show(fix((s[p]*5+d[p]*5) mod 60)) ++ " min\n" ++ 
+  "  Final: " ++ show(fix(10+((s[p]*5+d[p]*5) div 60))) ++ "h " ++ show(fix((s[p]*5+d[p]*5) mod 60)) ++ " min\n" ++
   concat(["  Music " ++ show(m) ++ " toca instrument " ++ show(fix(musicsAssignats[p,m])) ++ "\n" | m in 1..nMusics where fix(musicsAssignats[p,m])!=0]) |  
   p in 1..nPeces
 ];
