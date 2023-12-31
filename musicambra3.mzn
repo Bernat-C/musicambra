@@ -46,9 +46,9 @@ constraint exists(i in 1..nPeces)(x[i,0]);
 ); */
 
 
-% Si en algun moment no es toca cap cançó, vol dir que ja estem, de manera que no se n'ha de tocar cap altra més nedavant
-/*constraint forall(t in 0..dummyUB-1) (
-  not (sum([x[p,t] | p in 1..nPeces]) = 0) \/ forall(u in t+1..dummyUB) (sum([x[p,u] | p in 1..nPeces]) = 0)
+% No hi pot haver forats buits!
+/*constraint forall(t in 0..dummyUB where 5*t < max_value) (
+  exists(p in 1..nPeces)(x[p,t])
 );*/
 
 % Que cada peça tingui els instruments que necessita durant l'execució
@@ -66,22 +66,13 @@ constraint forall(i in 1..nPeces, j in 1..nMusics)(
     if musicsAssignats[i,j]!=0 then saptocar[j,musicsAssignats[i,j]] endif
 );
 
-% Constraint que assegura que un músic no pugui de tocar dos peces simultàniament
-constraint forall(i in 1..nPeces, j in i..nPeces, t in 0..dummyUB, m in 1..nMusics)( % Per tots els inicis, Per tots els músics
-      if x[i,t] /\ x[j,t] /\ i!=j then musicsAssignats[i,m]*musicsAssignats[j,m]=0 endif
-);
-
 %solve minimize max([s[i]+d[i]| i in 1..nPeces])*pressupost + preu;
 solve minimize max([t| i in 1..nPeces, t in 0..dummyUB where x[i,t]]);
 
-%var int: max_value = max([t*5| i in 1..nPeces, t in 0..dummyUB where x[i,t]]);
 
 array[1..nPeces] of var 0..dummyUB: min_values = [ min([t | t in 0..dummyUB where x[p,t]]) | p in 1..nPeces ];
 array[1..nPeces] of var 0..dummyUB: max_values = [ max([t | t in 0..dummyUB where x[p,t]]) | p in 1..nPeces ];
 var int: max_value = max(max_values);
-
-%output [ "max_values" ++ show(i) ++ ": " ++ show(max_values[i]) ++ "\n" | i in index_set(min_values) ];
-
 
 output [
   "Hora d’inici del festival: 10h 0min \nHora d'acabada del festival: " ++ show(10 + ((max_value+1)*5) div 60)++ "h " ++
