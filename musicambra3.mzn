@@ -40,21 +40,16 @@ constraint forall(i in 1..nPrecs, j in 0..dummyUB, t in j..dummyUB) (
 % La primera cançó ha de començar al principi del festival
 constraint exists(i in 1..nPeces)(x[i,0]);
 
+% Una cançó o bé comença al principi, o bé comença quan una altra cançó acaba
+/* constraint forall(p in 1..nPeces, t in 0..dummyUB)(
+   not x[p,t] \/ t=0 \/ x[p,t-1] \/ exists(i in 1..nPeces)(x[i,t-1] /\ not x[i,t])
+); */
+
 
 % Si en algun moment no es toca cap cançó, vol dir que ja estem, de manera que no se n'ha de tocar cap altra més nedavant
 /*constraint forall(t in 0..dummyUB-1) (
   not (sum([x[p,t] | p in 1..nPeces]) = 0) \/ forall(u in t+1..dummyUB) (sum([x[p,u] | p in 1..nPeces]) = 0)
 );*/
-
-/*
-array[1..nPeces] of var 0..dummyUB: min_values = [ min([t | t in 0..dummyUB where x[p,t]]) | p in 1..nPeces ];
-array[1..nPeces] of var 0..dummyUB: max_values = [ max([t | t in 0..dummyUB where x[p,t]]) | p in 1..nPeces ];
-
-% L'inici d'una cançó ha de ser 0 o just després que acabi una altra cançó
-constraint forall(p in 1..nPeces) (
-  min_values[p] = 0 \/ exists(q in 1..nPeces where q != p) (min_values[p] = max_values[q] + 1)
-);*/
-
 
 % Que cada peça tingui els instruments que necessita durant l'execució
 constraint forall(i in 1..nPeces, j in 1..nInstruments)(

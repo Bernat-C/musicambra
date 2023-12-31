@@ -43,14 +43,14 @@ constraint forall(i in 1..nPrecs) (
   s[i] = 0 \/ exists(j in 1..nPeces where j != i)(s[j] + d[j] = s[i])
 );*/
 
-/*constraint forall(p in 1..nPeces, m in 1..nMusics) (
+constraint forall(p in 1..nPeces, m in 1..nMusics) (
   let { 
     var bool: foundInstrument = false;
   } in 
   if not exists(i in 1..nInstruments) (saptocar[m, i] /\ requereix[p, i]>0) then 
     musicsAssignats[p, m] = 0
   endif
-);*7
+);
 
 % La primera cançó ha de començar al principi del festival
 constraint min([s[i] | i in 1..nPeces]) = 0;
@@ -95,10 +95,6 @@ constraint forall(i in 1..nInstruments) (
   cumulative(s,d,[requereix[p,i]|p in 1..nPeces],poolInstruments[i])
 );
 
-constraint forall(i in 1..nInstruments, j in (i+1)..nInstruments) (
-  cumulative(s,d,[requereix[p,i]+requereix[p,j]|p in 1..nPeces],   poolInstruments[i] + poolInstruments[j] - count([if saptocar[m,i] /\ saptocar[m,j] then 1 else 0 endif | m in 1..nMusics], 1))
-);
-
 % Constraint per dir que no es poden executar més musics a la vegada que els que tenim.
 %constraint cumulative(s,d,[sum([requereix[p,i] | i in 1..nInstruments])|p in 1..nPeces],nMusics);
 
@@ -120,13 +116,13 @@ output[
 ];
 
 /* CÀLCULS DE LOWER BOUNDS I UPPER BOUNDS */
-constraint forall(i in 1..nPeces) ( % LB
+/*constraint forall(i in 1..nPeces) ( % LB
     s[i] >= max([s[pred[j]]+d[pred[j]] | j in 1..nPrecs where succ[j]==i])
 );
 
 constraint forall(i in 1..nPeces) ( % UB
     s[i] <= min([s[i]-d[pred[j]] | j in 1..nPrecs where succ[j]==i])
-);
+);*/
 
 
 
