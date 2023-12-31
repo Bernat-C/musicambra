@@ -15,7 +15,7 @@ int: nPrecs;
 array[1..nPrecs] of 1..nPeces: pred;
 array[1..nPrecs] of 1..nPeces: succ;
 
-int: dummyUB = sum(i in 1..nPeces)(d[i]);
+int: dummyUB = sum(i in 1..nPeces)(d[i]) + count(i in 1..nPeces)(requereix[i,2]>0);
 
 array[1..nPeces,1..nMusics] of var 0..nInstruments: musicsAssignats;
 
@@ -60,8 +60,8 @@ constraint forall(p in 1..nPeces) (
  % Fem els càlculs sempre amb temps % 5
  if  d[p]>10 then
   false
-  else
-  true
+  %else
+  %true
   endif
 );
 

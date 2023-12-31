@@ -19,9 +19,16 @@ array[1..nPrecs] of 1..nPeces: succ;
 int: dummyUB = sum(i in 1..nPeces)(d[i]);
 
 array[1..nPeces,1..nMusics] of var 0..nInstruments: musicsAssignats;
-
 array [1..nPeces, 0..dummyUB] of var bool: x;  % Si una peça s'està executant en un temps
+
 var 0..pressupost: preu = sum([d[i]*salari[j]| j in 1..nMusics, i in 1..nPeces where musicsAssignats[i,j]!=0]);               % Pressupost
+array[1..nInstruments] of int: poolInstruments = [sum(j in 1..nMusics)(saptocar[j,i])| i in 1..nInstruments]; % Number of each instrument we have.
+
+
+/* CONSTRAINTS */
+
+%constraint max([t| t in 1..dummyUB, p in 1..nPeces where x[p,t]]) > max([sum([d[p]*requereix[p,i]/poolInstruments[i]| p in 1..nPeces]) | i in 1..nInstruments]);
+
 
 % Constraint que assegura que es respecta la prioritat
 constraint forall(i in 1..nPrecs, j in 0..dummyUB, t in j..dummyUB) (

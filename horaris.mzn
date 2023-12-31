@@ -24,22 +24,7 @@ array [1..nPeces] of var 0..dummyUB: s;  % Temps d'inici de cada peça
 %array [1..nPeces] of var 0..dummyUB: f;  % Temps de finalització de cada peça
 var 0..pressupost: preu = sum([d[i]*salari[j]| j in 1..nMusics, i in 1..nPeces where musicsAssignats[i,j]!=0]);               % Pressupost
 
-%array [0..2*nInstruments-1] of var 0..nMusics: poolCapacitats;
-
- %Define a function to convert a boolean array to an integer
-/*function var int: boolArrayToInt(array[int] of var bool: arr) = 
-  sum(i in index_set(arr))(bool2int(arr[i]) * pow(2, i-1));
-
-% Create an array to hold the unique skill sets
-array[0..pow(2, nInstruments)-1] of var 0..nMusics: poolCapacitats = 
-  array1d(0..pow(2, nInstruments)-1, [ sum(j in 1..nMusics)(boolArrayToInt([saptocar[j,k] | k in 1..nInstruments]) = i) | i in 0..pow(2, nInstruments)-1 ]);*/
-
 array[1..nInstruments] of int: poolInstruments = [sum(j in 1..nMusics)(saptocar[j,i])| i in 1..nInstruments]; % Number of each instrument we have.
-
-/*
-constraint forall(i in 1..nPeces)(
-  if exists(j in 1..nPrecs)(i = succ[j]) then s[i] != 0 endif
-);*/
 
 % Assegura que apareixeran el nombre d'instruments que son requerits. No pot ser global cardinality closed perquè no existeix l'instrument 0.
 %constraint global_cardinality([musicsAssignats[i,j]|i in 1..nPeces, j in 1..nMusics],[i|i in 1..nInstruments],[sum([requereix[p,i] | p in 1..nPeces])|i in 1..nInstruments]);
@@ -52,16 +37,10 @@ constraint forall(i in 1..nPrecs) (
   s[succ[i]] >= s[pred[i]]+d[pred[i]]
 );
 
-% Una cançó o bé comença al principi, o bé comença quan una altra cançó acaba (útil?)
+% Una cançó o bé comença al principi, o bé comença quan una altra cançó acaba
 
 /*constraint forall(i in 1..nPeces)(
   s[i] = 0 \/ exists(j in 1..nPeces where j != i)(s[j] + d[j] = s[i])
-);*/
-
-/*constraint forall(p in 1..nPeces, j in 1..nPeces) (
-  if all_equal([requereix[p,i]| i in 1..nInstruments], [requereix[j,i]| i in 1..nInstruments]) then
-    s[p]<s[j]
-  endif
 );*/
 
 /*constraint forall(p in 1..nPeces, m in 1..nMusics) (
@@ -73,18 +52,12 @@ constraint forall(i in 1..nPrecs) (
   endif
 );*7
 
-/*constraint forall(i in 1..nPrecs, j in 1..nPrecs) (
-  if succ[i] == pred[j] then
-    s[succ[j]] >= s[pred[i]] + d[pred[i]]
-  endif
-);*/
-
 % La primera cançó ha de començar al principi del festival
 constraint min([s[i] | i in 1..nPeces]) = 0;
 
 % Que cada peça tingui els instruments que necessita durant l'execució
 constraint forall(i in 1..nPeces, j in 1..nInstruments)(
-    count([musicsAssignats[i,k]|k in 1..nMusics], j) == requereix[i,j]
+    count_eq([musicsAssignats[i,k]|k in 1..nMusics], j, requereix[i,j])
 );
 
 
@@ -94,7 +67,6 @@ constraint forall(i in 1..nPeces, j in 1..nMusics)(
 );
 
 % Constraint que assegura que un músic no pugui de tocar dos peces simultàniament
-% Nota: no podem fer j in i+1..nPeces ja que en alguns casos no es detectaria la concurrència de dues peces
 /*constraint forall(i in 1..nPeces, m in 1..nMusics, j in 1..nPeces)(
       % Si dues peces són concurrents, llavors un mateix músic no pot tocar a les dues
       if s[i] <= s[j] /\ s[i] + d[i] > s[j] /\ i!=j then musicsAssignats[i,m]*musicsAssignats[j,m]=0 endif
@@ -111,18 +83,8 @@ constraint forall(i in 1..nMusics, j in i..nMusics)(
   endif
 );
 
-% LB
-
-%constraint forall(i in 1..nPeces)(f[i] = s[i] + d[i]);
-% Constraint que assegura que un músic no pugui de tocar dos peces simultàniament (però més eficient)
-/*constraint forall(i in 1..nPeces, m in 1..nMusics, j in i..nPeces)(
-      % Si dues peces són concurrents, llavors un mateix músic no pot tocar a les dues
-      if (s[i] <= s[j] /\ s[i] + d[i] > s[j] \/ s[j] <= s[i] /\ s[j] + d[j] > s[i]) /\ i!=j then musicsAssignats[i,m]*musicsAssignats[j,m]=0 endif
-);*/
-
-
+% Si dues peces són concurrents, llavors un mateix músic no pot tocar a les dues
 constraint forall(i in 1..nPeces, m in 1..nMusics, j in (i+1)..nPeces)(
-      % Si dues peces són concurrents, llavors un mateix músic no pot tocar a les dues
       if musicsAssignats[i,m] != 0 /\ musicsAssignats[j,m] != 0 then
         disjunctive([s[i],s[j]],[d[i],d[j]])
       endif
@@ -133,46 +95,15 @@ constraint forall(i in 1..nInstruments) (
   cumulative(s,d,[requereix[p,i]|p in 1..nPeces],poolInstruments[i])
 );
 
+constraint forall(i in 1..nInstruments, j in (i+1)..nInstruments) (
+  cumulative(s,d,[requereix[p,i]+requereix[p,j]|p in 1..nPeces],   poolInstruments[i] + poolInstruments[j] - count([if saptocar[m,i] /\ saptocar[m,j] then 1 else 0 endif | m in 1..nMusics], 1))
+);
+
 % Constraint per dir que no es poden executar més musics a la vegada que els que tenim.
 %constraint cumulative(s,d,[sum([requereix[p,i] | i in 1..nInstruments])|p in 1..nPeces],nMusics);
 
-/*
-constraint forall(i in 1..nPeces, j in 1..nMusics) (
-    % si j toca a i
-    if musicsAssignats[i,j] > 0 then
-        forall(k in 1..nMusics) (
-            % si k sap tocar el que toca j
-            % si j cobra més que k
-            if saptocar[k,musicsAssignats[i,j]] /\ salari[j] > salari[k] then
-                %cal que k estigui assignat a una altra peça concurrent
-                exists(l in 1..nPeces) (
-                    musicsAssignats[l,k] > 0 /\ s[i] <= s[l] /\ s[i] + d[i] > s[l]
-                )
-            endif
-        )
-    endif
-);*/
-
-/*
-constraint forall(i in 1..nPeces, j in 1..nMusics) (
-    % si j toca a i
-    if musicsAssignats[i,j] > 0 then
-        forall(k in 1..nMusics) (
-            % si k sap tocar el que toca j
-            % si j cobra més que k
-            if forall(m in 1..nInstruments)(saptocar[k,m] = saptocar[j,m]) /\ salari[j] > salari[k] then
-                %cal que k estigui assignat a una altra peça concurrent
-                exists(l in 1..nPeces) (
-                    musicsAssignats[l,k] > 0 /\ s[i] <= s[l] /\ s[i] + d[i] > s[l]
-                )
-            endif
-        )
-    endif
-);*/
-
-
 %solve minimize max([s[i]+d[i]| i in 1..nPeces])*pressupost + preu;
-solve minimize max([s[i]+d[i]| i in 1..nPeces]);
+solve :: int_search(s, smallest, indomain_min) minimize max([s[i]+d[i]| i in 1..nPeces]);
 
 var int: max_value = max([s[i]*5+d[i]*5 | i in 1..nPeces]);
 
@@ -189,17 +120,13 @@ output[
 ];
 
 /* CÀLCULS DE LOWER BOUNDS I UPPER BOUNDS */
-/*array[1..nPeces] of var 1..dummyUB: lb;% = [1 | i in 1..nPeces];  % Lower bounds
-array[1..nPeces] of var 1..dummyUB: ub;% = [1 | i in 1..nPeces];  % Upper bounds
-
-constraint forall(i in 1..nPeces) (
-    lb[i] = max([s[pred[j]]+d[pred[j]] | j in 1..nPrecs where succ[j]==i]) /\
-    ub[i] = min([s[succ[j]]-d[pred[j]] | j in 1..nPrecs where succ[j]==i])
+constraint forall(i in 1..nPeces) ( % LB
+    s[i] >= max([s[pred[j]]+d[pred[j]] | j in 1..nPrecs where succ[j]==i])
 );
 
-constraint forall(i in 1..nPeces) (
-    lb[i] <= s[i] /\ s[i] <= ub[i]
-);*/
+constraint forall(i in 1..nPeces) ( % UB
+    s[i] <= min([s[i]-d[pred[j]] | j in 1..nPrecs where succ[j]==i])
+);
 
 
 
