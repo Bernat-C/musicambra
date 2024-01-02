@@ -58,10 +58,8 @@ constraint forall(i in 1..nInstruments) (
 /* PART OPCIONAL */
 constraint forall(p in 1..nPeces) (
  % Fem els càlculs sempre amb temps % 5
- if  d[p]>10 then
+ if  d[p]>10 /\ requereix[p,2]>0 then
   false
-  %else
-  %true
   endif
 );
 
