@@ -44,9 +44,6 @@ constraint forall(i in 1..nPrecs) (
 );*/
 
 constraint forall(p in 1..nPeces, m in 1..nMusics) (
-  let { 
-    var bool: foundInstrument = false;
-  } in 
   if not exists(i in 1..nInstruments) (saptocar[m, i] /\ requereix[p, i]>0) then 
     musicsAssignats[p, m] = 0
   endif
